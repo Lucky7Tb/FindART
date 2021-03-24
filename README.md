@@ -13,8 +13,9 @@ Aplikasi berbasi web untuk mencari ART dan pekerjaan ART.
 
 1. Clone repository
 	- path/to/webserver/root> `git clone https://github.com/Lucky7Tb/FindART.git findart`
-2. Konfigurasi database. 
-   - src->config->db.php
+2. Konfigurasi database.
+	 - Import database `src->database->find_art.sql`
+   - Konfigurasi database untuk aplikasi `src->config->db.php`
 3. Jalankan webserver.
 4. Buka di browser 'http://localhost/findart'
 5. Selesai
