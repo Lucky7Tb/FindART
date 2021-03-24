@@ -1,8 +1,6 @@
 # FindART
 
-<div style="text-align: center">
-	<img src="./src/assets/img/findart_logo.png">
-</div>
+<p align="center"><img src="./src/assets/img/findart_logo.png"></p>
 
 Aplikasi berbasi web untuk mencari ART dan pekerjaan ART. 
 
