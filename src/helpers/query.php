@@ -1,7 +1,7 @@
 <?php
 
-require ('../config/app.php');
-require ('../config/db.php');
+require __DIR__. '/../config/app.php';
+require __DIR__. '/../config/db.php';
 
 function select($query)
 {
@@ -9,6 +9,7 @@ function select($query)
 
 	$result = mysqli_query($connection, $query);
 	$data = [];
+	
 	while ($row = mysqli_fetch_assoc($result)) {
 		$data[] = $row;
 	}
