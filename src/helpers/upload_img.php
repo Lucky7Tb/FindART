@@ -1,6 +1,4 @@
 <?php
-require("../../config/app.php");
-
 function imageUpload($key)
 {
 	$config = config();
@@ -11,15 +9,14 @@ function imageUpload($key)
 	$imageTmp = $_FILES[$key]["tmp_name"];
 	$imageSize = $_FILES[$key]["size"];
 
-	$imageData["fileName"] = $imageName;
+	$imageData["fileName"] = date('YmdHis') . $imageName;
 	$imageData["success"] = false;
 	$imageData["size"] = $imageSize;
 	$imageData["type"] = $imageType;
 
 	if (checkImgSize($imageSize) && checkImgType($imageType)) {
-		$isUploaded = move_uploaded_file($imageTmp, $uploadDir . $imageName);
+		$isUploaded = move_uploaded_file($imageTmp, $uploadDir . $imageData["fileName"]);
 		if ($isUploaded) {
-			$imageData["fileName"] = $imageName;
 			$imageData["success"] = true;
 		}
 	}

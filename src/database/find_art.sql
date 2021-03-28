@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 24, 2021 at 04:28 PM
+-- Generation Time: Mar 28, 2021 at 11:35 AM
 -- Server version: 10.4.17-MariaDB-log
 -- PHP Version: 7.4.13
 
@@ -31,7 +31,7 @@ CREATE TABLE `art` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `full_name` varchar(80) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `job_status` tinyint(1) NOT NULL,
+  `job_status` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -47,6 +47,7 @@ CREATE TABLE `art_accepted_job` (
   `art_id` int(11) NOT NULL,
   `art_finder_id` int(11) NOT NULL,
   `job_vacancy_id` int(11) NOT NULL,
+  `job_status` tinyint(4) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -75,6 +76,7 @@ CREATE TABLE `art_interested_ job` (
   `id` int(11) NOT NULL,
   `art_id` int(11) NOT NULL,
   `job_vacancy_id` int(11) NOT NULL,
+  `job_status` tinyint(4) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -7877,7 +7879,7 @@ CREATE TABLE `job_vacancy` (
   `job_payment` varchar(50) NOT NULL,
   `job_due_date` date NOT NULL,
   `is_visible` tinyint(4) NOT NULL,
-  `craeted_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -88567,7 +88569,7 @@ INSERT INTO `sub_districts` (`id`, `district_id`, `name`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `provice_id` char(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `province_id` char(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `city_id` char(4) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `district_id` char(7) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `sub_district_id` char(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -88576,6 +88578,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `contact_number` varchar(15) NOT NULL,
   `address` text NOT NULL,
+  `role` tinyint(4) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -88670,11 +88673,11 @@ ALTER TABLE `sub_districts`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`),
-  ADD KEY `provice_id` (`provice_id`),
   ADD KEY `city_id` (`city_id`),
   ADD KEY `district_id` (`district_id`),
   ADD KEY `sub_district_id` (`sub_district_id`),
-  ADD KEY `photo_id` (`photo_id`);
+  ADD KEY `photo_id` (`photo_id`),
+  ADD KEY `provice_id` (`province_id`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -88684,7 +88687,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `art`
 --
 ALTER TABLE `art`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `art_accepted_job`
@@ -88696,7 +88699,7 @@ ALTER TABLE `art_accepted_job`
 -- AUTO_INCREMENT for table `art_finder`
 --
 ALTER TABLE `art_finder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `art_interested_ job`
@@ -88714,19 +88717,19 @@ ALTER TABLE `art_rating`
 -- AUTO_INCREMENT for table `job_vacancy`
 --
 ALTER TABLE `job_vacancy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
@@ -88790,7 +88793,7 @@ ALTER TABLE `users`
   ADD CONSTRAINT `FK_USERS_TO_CITIES` FOREIGN KEY (`city_id`) REFERENCES `cities` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_USERS_TO_DISTRICTS` FOREIGN KEY (`district_id`) REFERENCES `districts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_USERS_TO_PHOTOS` FOREIGN KEY (`photo_id`) REFERENCES `photos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_USERS_TO_PROVINCES` FOREIGN KEY (`provice_id`) REFERENCES `provinces` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_USERS_TO_PROVINCES` FOREIGN KEY (`province_id`) REFERENCES `provinces` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_USERS_TO_SUB_DISTRICTS` FOREIGN KEY (`sub_district_id`) REFERENCES `sub_districts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
