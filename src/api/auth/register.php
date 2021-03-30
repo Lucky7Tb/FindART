@@ -7,12 +7,12 @@ $provinceId = $_POST['province_id'];
 $cityId = $_POST['city_id'];
 $districtId = $_POST['district_id'];
 $subDistrictId = $_POST['sub_district_id'];
-$username = $_POST['username'];
-$password = $_POST['password'];
-$confirmPassword = $_POST['confirm_password'];
-$contactNumber = $_POST['contact_number'];
-$address = $_POST['address'];
-$fullName = $_POST['full_name'];
+$username = xssFilter($_POST['username']);
+$password = xssFilter($_POST['password']);
+$confirmPassword = xssFilter($_POST['confirm_password']);
+$contactNumber = xssFilter($_POST['contact_number']);
+$address = xssFilter($_POST['address']);
+$fullName = xssFilter($_POST['full_name']);
 $createdAt = getTodayDate();
 $updatedAt = getTodayDate();
 
@@ -20,12 +20,12 @@ if ($password == $confirmPassword) {
 	$password = hashPassword($password);
 
 	$userId = save("
-		INSERT INTO users (`province_id`, `city_id`, `district_id`, `sub_district_id`, `photo_id`, `username`, `password`, `contact_number`, `address`, `created_at`, `updated_at`) 
-		VALUES ('$provinceId', '$cityId', '$districtId', '$subDistrictId', '1', '$username', '$password', '$contactNumber', '$address', '$createdAt', '$updatedAt');
+		INSERT INTO users (`province_id`, `city_id`, `district_id`, `sub_district_id`, `photo_id`, `username`, `password`, `contact_number`, `address`, `role`, `created_at`, `updated_at`) 
+		VALUES ('$provinceId', '$cityId', '$districtId', '$subDistrictId', '1', '$username', '$password', '$contactNumber', '$address', '$isART', '$createdAt', '$updatedAt');
 	");
 
 	if ($userId == -1) { 
-		response(400, null, 'Username sudah ada yang menggunakan', null);
+		response(400, null, 'Username sudah ada yang menggunakan');
 	}
 
 	$table = $isART ? 'art' : 'art_finder';
@@ -36,11 +36,11 @@ if ($password == $confirmPassword) {
 	");
 
 	if ($insertedId == -1) {
-		response(400, null, 'Username sudah ada yang menggunakan', null);
+		response(400, null, 'Username sudah ada yang menggunakan');
 	}
 
-	response(200, null, 'Registrasi sukses', null);
+	response(200, null, 'Registrasi sukses');
 	
 }else {
-	response(400, null, 'Password tidak sama', null);
+	response(400, null, 'Password tidak sama');
 }

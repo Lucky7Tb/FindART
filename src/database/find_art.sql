@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 24, 2021 at 04:28 PM
+-- Generation Time: Mar 30, 2021 at 03:11 PM
 -- Server version: 10.4.17-MariaDB-log
 -- PHP Version: 7.4.13
 
@@ -31,7 +31,7 @@ CREATE TABLE `art` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `full_name` varchar(80) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `job_status` tinyint(1) NOT NULL,
+  `job_status` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -47,6 +47,7 @@ CREATE TABLE `art_accepted_job` (
   `art_id` int(11) NOT NULL,
   `art_finder_id` int(11) NOT NULL,
   `job_vacancy_id` int(11) NOT NULL,
+  `job_status` tinyint(4) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -65,6 +66,13 @@ CREATE TABLE `art_finder` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `art_finder`
+--
+
+INSERT INTO `art_finder` (`id`, `user_id`, `full_name`, `created_at`, `updated_at`) VALUES
+(3, 15, 'Lucky Finder ART', '2021-03-29 23:14:17', '2021-03-29 23:14:17');
+
 -- --------------------------------------------------------
 
 --
@@ -75,6 +83,7 @@ CREATE TABLE `art_interested_ job` (
   `id` int(11) NOT NULL,
   `art_id` int(11) NOT NULL,
   `job_vacancy_id` int(11) NOT NULL,
+  `job_status` tinyint(4) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -7877,9 +7886,16 @@ CREATE TABLE `job_vacancy` (
   `job_payment` varchar(50) NOT NULL,
   `job_due_date` date NOT NULL,
   `is_visible` tinyint(4) NOT NULL,
-  `craeted_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `job_vacancy`
+--
+
+INSERT INTO `job_vacancy` (`id`, `art_finder_id`, `photo_id`, `job_description`, `job_payment`, `job_due_date`, `is_visible`, `created_at`, `updated_at`) VALUES
+(2, 3, 1, 'fwefwefewf', '323232', '2021-03-29', 1, '2021-03-29 23:14:47', '2021-03-29 23:14:48');
 
 -- --------------------------------------------------------
 
@@ -7893,6 +7909,13 @@ CREATE TABLE `photos` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `photos`
+--
+
+INSERT INTO `photos` (`id`, `photo_url`, `created_at`, `updated_at`) VALUES
+(1, 'http://localhost/findart/src/assets/img/avatar.png', '2021-03-29 23:08:10', '2021-03-29 23:08:11');
 
 -- --------------------------------------------------------
 
@@ -88567,7 +88590,7 @@ INSERT INTO `sub_districts` (`id`, `district_id`, `name`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `provice_id` char(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `province_id` char(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `city_id` char(4) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `district_id` char(7) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `sub_district_id` char(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -88576,9 +88599,17 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `contact_number` varchar(15) NOT NULL,
   `address` text NOT NULL,
+  `role` tinyint(4) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `province_id`, `city_id`, `district_id`, `sub_district_id`, `photo_id`, `username`, `password`, `contact_number`, `address`, `role`, `created_at`, `updated_at`) VALUES
+(15, '11', '1101', '1101010', '1101010001', 1, 'luckyfinder', '$2y$10$.rujMCS00d9PfnAjc9yc5OYA7hySYIm/Zn3Yjz4rfKyiVEJCxk19G', '08918898', 'Bandung', 0, '2021-03-29 23:14:17', '2021-03-29 23:14:17');
 
 --
 -- Indexes for dumped tables
@@ -88670,11 +88701,11 @@ ALTER TABLE `sub_districts`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`),
-  ADD KEY `provice_id` (`provice_id`),
   ADD KEY `city_id` (`city_id`),
   ADD KEY `district_id` (`district_id`),
   ADD KEY `sub_district_id` (`sub_district_id`),
-  ADD KEY `photo_id` (`photo_id`);
+  ADD KEY `photo_id` (`photo_id`),
+  ADD KEY `provice_id` (`province_id`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -88684,7 +88715,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `art`
 --
 ALTER TABLE `art`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `art_accepted_job`
@@ -88696,7 +88727,7 @@ ALTER TABLE `art_accepted_job`
 -- AUTO_INCREMENT for table `art_finder`
 --
 ALTER TABLE `art_finder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `art_interested_ job`
@@ -88714,19 +88745,19 @@ ALTER TABLE `art_rating`
 -- AUTO_INCREMENT for table `job_vacancy`
 --
 ALTER TABLE `job_vacancy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
@@ -88790,7 +88821,7 @@ ALTER TABLE `users`
   ADD CONSTRAINT `FK_USERS_TO_CITIES` FOREIGN KEY (`city_id`) REFERENCES `cities` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_USERS_TO_DISTRICTS` FOREIGN KEY (`district_id`) REFERENCES `districts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_USERS_TO_PHOTOS` FOREIGN KEY (`photo_id`) REFERENCES `photos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_USERS_TO_PROVINCES` FOREIGN KEY (`provice_id`) REFERENCES `provinces` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_USERS_TO_PROVINCES` FOREIGN KEY (`province_id`) REFERENCES `provinces` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_USERS_TO_SUB_DISTRICTS` FOREIGN KEY (`sub_district_id`) REFERENCES `sub_districts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 

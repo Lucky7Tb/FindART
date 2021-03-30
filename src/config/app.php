@@ -1,21 +1,18 @@
 <?php
 session_start();
 
-function baseUrl()
-{
-	return "http://localhost/findart";
-}
+define('BASEURL', 'http://localhost/findart');
 
 function config()
 {
 	$app = [
-		"src" => [
-			"image" => baseUrl()."/src/assets/img/",
-			"css" => baseUrl()."/src/assets/css/",
-			"js" => baseUrl()."/src/assets/js/",
+		'src' => [
+			'image' => BASEURL.'/src/assets/img/',
+			'css' => BASEURL.'/src/assets/css/',
+			'js' => BASEURL.'/src/assets/js/',
 		],
-		"template" => __DIR__ . "/../resource/template/",
-		"uploadDir" => __DIR__ . "/../assets/img/"
+		'template' => __DIR__ . '/../view/template/',
+		'uploadDir' => __DIR__ . '/../assets/img/'
 	];
 
 	return $app;
