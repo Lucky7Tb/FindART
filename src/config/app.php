@@ -11,7 +11,7 @@ function config()
 			'css' => BASEURL.'/src/assets/css/',
 			'js' => BASEURL.'/src/assets/js/',
 		],
-		'template' => __DIR__ . '/../resource/template/',
+		'template' => __DIR__ . '/../view/template/',
 		'uploadDir' => __DIR__ . '/../assets/img/'
 	];
 

@@ -17,11 +17,11 @@ if(count($user) > 0) {
 	if (checkPassword($password, $user[0]['password'])) {
 		$_SESSION['user'] = $user[0];
 
-		response(200, $user, "Berhasil login", null);
+		response(200, $user[0], 'Berhasil login');
 	}
 
-	response(403, null, "Password anda salah", null);
+	response(401, null, 'Password anda salah');
 
 } else {
-	response(403, null, "User tidak ditemukan", null);
+	response(401, null, 'User tidak ditemukan');
 }

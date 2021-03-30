@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 28, 2021 at 11:35 AM
+-- Generation Time: Mar 30, 2021 at 03:11 PM
 -- Server version: 10.4.17-MariaDB-log
 -- PHP Version: 7.4.13
 
@@ -65,6 +65,13 @@ CREATE TABLE `art_finder` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `art_finder`
+--
+
+INSERT INTO `art_finder` (`id`, `user_id`, `full_name`, `created_at`, `updated_at`) VALUES
+(3, 15, 'Lucky Finder ART', '2021-03-29 23:14:17', '2021-03-29 23:14:17');
 
 -- --------------------------------------------------------
 
@@ -7883,6 +7890,13 @@ CREATE TABLE `job_vacancy` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `job_vacancy`
+--
+
+INSERT INTO `job_vacancy` (`id`, `art_finder_id`, `photo_id`, `job_description`, `job_payment`, `job_due_date`, `is_visible`, `created_at`, `updated_at`) VALUES
+(2, 3, 1, 'fwefwefewf', '323232', '2021-03-29', 1, '2021-03-29 23:14:47', '2021-03-29 23:14:48');
+
 -- --------------------------------------------------------
 
 --
@@ -7895,6 +7909,13 @@ CREATE TABLE `photos` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `photos`
+--
+
+INSERT INTO `photos` (`id`, `photo_url`, `created_at`, `updated_at`) VALUES
+(1, 'http://localhost/findart/src/assets/img/avatar.png', '2021-03-29 23:08:10', '2021-03-29 23:08:11');
 
 -- --------------------------------------------------------
 
@@ -88584,6 +88605,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `province_id`, `city_id`, `district_id`, `sub_district_id`, `photo_id`, `username`, `password`, `contact_number`, `address`, `role`, `created_at`, `updated_at`) VALUES
+(15, '11', '1101', '1101010', '1101010001', 1, 'luckyfinder', '$2y$10$.rujMCS00d9PfnAjc9yc5OYA7hySYIm/Zn3Yjz4rfKyiVEJCxk19G', '08918898', 'Bandung', 0, '2021-03-29 23:14:17', '2021-03-29 23:14:17');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -88699,7 +88727,7 @@ ALTER TABLE `art_accepted_job`
 -- AUTO_INCREMENT for table `art_finder`
 --
 ALTER TABLE `art_finder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `art_interested_ job`
@@ -88717,19 +88745,19 @@ ALTER TABLE `art_rating`
 -- AUTO_INCREMENT for table `job_vacancy`
 --
 ALTER TABLE `job_vacancy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables

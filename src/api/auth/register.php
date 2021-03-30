@@ -20,12 +20,12 @@ if ($password == $confirmPassword) {
 	$password = hashPassword($password);
 
 	$userId = save("
-		INSERT INTO users (`province_id`, `city_id`, `district_id`, `sub_district_id`, `photo_id`, `username`, `password`, `contact_number`, `address`, ``role`, `created_at`, `updated_at`) 
-		VALUES ('$provinceId', '$cityId', '$districtId', '$subDistrictId', '1', '$username', '$password', '$contactNumber', '$address', $isArt, '$createdAt', '$updatedAt');
+		INSERT INTO users (`province_id`, `city_id`, `district_id`, `sub_district_id`, `photo_id`, `username`, `password`, `contact_number`, `address`, `role`, `created_at`, `updated_at`) 
+		VALUES ('$provinceId', '$cityId', '$districtId', '$subDistrictId', '1', '$username', '$password', '$contactNumber', '$address', '$isART', '$createdAt', '$updatedAt');
 	");
 
 	if ($userId == -1) { 
-		response(400, null, 'Username sudah ada yang menggunakan', null);
+		response(400, null, 'Username sudah ada yang menggunakan');
 	}
 
 	$table = $isART ? 'art' : 'art_finder';
@@ -36,11 +36,11 @@ if ($password == $confirmPassword) {
 	");
 
 	if ($insertedId == -1) {
-		response(400, null, 'Username sudah ada yang menggunakan', null);
+		response(400, null, 'Username sudah ada yang menggunakan');
 	}
 
-	response(200, null, 'Registrasi sukses', null);
+	response(200, null, 'Registrasi sukses');
 	
 }else {
-	response(400, null, 'Password tidak sama', null);
+	response(400, null, 'Password tidak sama');
 }

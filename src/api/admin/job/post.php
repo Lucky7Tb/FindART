@@ -35,7 +35,7 @@ $jobVacancyId = save("
 );
 
 if ($jobVacancyId == -1) {
-	response(500, null, 'Terjadi kesalahan pada server', null);
+	response(500, null, 'Terjadi kesalahan pada server');
 }
 
-response(200, null, 'Berhasil menambah lowongan kerja', null);
+response(200, null, 'Berhasil menambah lowongan kerja');
