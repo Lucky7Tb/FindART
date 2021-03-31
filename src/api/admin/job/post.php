@@ -23,7 +23,7 @@ if (!$photo['success']) {
 	response(400, null, 'Harap perhatikan format dan ukuran foto', null);
 }
 
-$photoPath = BASEURL . '/src/assets/img/' . $photo['fileName'];
+$photoPath = $app['src']['image'] . $photo['fileName'];
 $photoId = save("
 	INSERT INTO photos (`photo_url`, `created_at`, `updated_at`)
 	VALUES('$photoPath', '$createdAt', '$updatedAt');
@@ -34,8 +34,8 @@ $jobVacancyId = save("
 "
 );
 
-if ($jobVacancyId == -1) {
-	response(500, null, 'Terjadi kesalahan pada server');
+if ($jobVacancyId != -1) {
+	response(200, null, 'Berhasil menambah lowongan kerja'); 
 }
 
-response(200, null, 'Berhasil menambah lowongan kerja');
+response(500, null, 'Terjadi kesalahan pada server');
