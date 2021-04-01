@@ -3,32 +3,29 @@
 require __DIR__ . '/../../../config/app.php';
 require __DIR__ . '/../../../helpers/helpers.php';
 require __DIR__ . '/../../../helpers/query.php';
+$app = config();
 
 $id = $_POST['job_id'];
 
-$jobThumbnailPath = select("
-	SELECT photos.photo_url 
+$jobThumbnail = select("
+	SELECT photos.photo_url, photos.id
 	FROM job_vacancy
 	JOIN photos ON photos.id = job_vacancy.photo_id
 	WHERE job_vacancy.id = '$id';
 ");
 
-$jobThumbnail = explode("http://localhost/findart/src/assets/img/", $jobThumbnailPath[0]['photo_url']);
+$thumbnail = explode($app['src']['image'], $jobThumbnail[0]['photo_url']);
 
-if (file_exists(__DIR__.'/../../../assets/img/'.$jobThumbnail[1])) {
-	unlink(__DIR__ . '/../../../assets/img/' . $jobThumbnail[1]);
+if (file_exists($app['uploadDir']. $thumbnail[1])) {
+	unlink($app['uploadDir'] . $thumbnail[1]);
 }
 
-// if (isset($_GET['id']) && $_GET['id'] !== "") {
-// 	$query .= "
-// 		WHERE job_vacancy.id = '" . $_GET['id'] . "'
-// 		ORDER BY job_vacancy.created_at DESC
-// 	";
-// 	$jobData = select($query);
+$isDeleted = delete("DELETE FROM job_vacancy WHERE job_vacancy.id = '$id'");
 
-// 	response(200, $jobData[0], 'Berhasil memuat data lowongan');
-// } else {
-// 	$query .= "ORDER BY job_vacancy.created_at DESC";
-// 	$jobData = select($query);
-// 	response(200, $jobData, 'Berhasil memuat data lowongan');
-// }
+if ($isDeleted) {
+	$isDeleted = delete("DELETE FROM photos WHERE photos.id = '".$jobThumbnail[0]['id']."'");
+
+	if ($isDeleted) {
+		response(200, null, 'Berhasil menghapus lowongan kerja');
+	}
+}
