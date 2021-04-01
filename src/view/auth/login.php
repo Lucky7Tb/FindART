@@ -15,17 +15,18 @@
         <h1>FindART</h1>
 
         <div class="form">
-            <form action="">
+            <form action="post" id="form-login">
                 <label for="username">Username</label><br>
-                <input type="text" id="username" name="username"><br>
+                <input type="text" name="username" id="username"><br>
                 <label for="password">Password</label><br>
-                <input type="password" name="password" id="password"><br>
-                <button type="submit" name="login">Login</button>
+                <input type="text" name="password" id="password"><br>
+                <button id="btn-login" type="submit" name="login">Login</button>
             </form>
             <a href="register.php">Belum punya akun?</a>
         </div>
         
     </div>
 
+    <script src="../../assets/js/login.js"></script>
 </body>
 </html>
