@@ -5,7 +5,7 @@
 ?>
 
 
-
+<h1>ART</h1>
 
 <script src="<?= $app['src']['js'].'http.js' ?>"></script>
 <?php require $app['template'].'header.php' ?>
