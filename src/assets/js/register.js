@@ -11,7 +11,98 @@ const confirmPassword = document.getElementById('con-password');
 const role = document.getElementById('mendaftar');
 const formRegister = document.getElementById('form-register');
 
+getProvinsi();
+
+function getProvinsi() {
+  fetch("http://localhost/findart/src/api/location/getProvince.php", {
+    method: "GET",
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then (function (response) {
+      if (response.code > 200) {
+        throw new Error(response.message);
+      }
+
+      let content = "";
+      response.data.forEach(data => {
+        content += `
+          <option value="${data.id}">${data.name}</option>
+        `
+      });
+      provinsi.innerHTML = content;
+    })
+}
+
+provinsi.addEventListener("change", function () {
+  fetch("http://localhost/findart/src/api/location/getCity.php?province_id=" + provinsi.value, {
+    method: "GET",
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then (function (response) {
+      if (response.code > 200) {
+        throw new Error(response.message);
+      }
+
+      let content = "";
+      response.data.forEach(data => {
+        content += `
+          <option value="${data.id}">${data.name}</option>
+        `
+      });
+      kota.innerHTML = content;
+    })
+})
+
+kota.addEventListener("change", function () {
+  fetch("http://localhost/findart/src/api/location/getDistrict.php?city_id=" + kota.value, {
+    method: "GET",
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then (function (response) {
+      if (response.code > 200) {
+        throw new Error(response.message);
+      }
+
+      let content = "";
+      response.data.forEach(data => {
+        content += `
+          <option value="${data.id}">${data.name}</option>
+        `
+      });
+      kecamatan.innerHTML = content;
+    })
+})
+
+kecamatan.addEventListener("change", function () {
+  fetch("http://localhost/findart/src/api/location/getSubDistrict.php?district_id=" + kecamatan.value, {
+    method: "GET",
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then (function (response) {
+      if (response.code > 200) {
+        throw new Error(response.message);
+      }
+
+      let content = "";
+      response.data.forEach(data => {
+        content += `
+          <option value="${data.id}">${data.name}</option>
+        `
+      });
+      kelurahan.innerHTML = content;
+    })
+})
+
 formRegister.addEventListener('submit', function(e) {
+  e.preventDefault();
 
   const data = new FormData();
 
@@ -39,7 +130,7 @@ formRegister.addEventListener('submit', function(e) {
         throw new Error(response.message);
       }
 
-      console.log(response);
+      window.location.href = "login.php";
     })
     .catch(function (error) {
       alert(error);

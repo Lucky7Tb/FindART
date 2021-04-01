@@ -17,9 +17,9 @@
         <div class="form">
             <form action="post" id="form-login">
                 <label for="username">Username</label><br>
-                <input type="text" name="username" id="username"><br>
+                <input type="text" name="username" id="username" required><br>
                 <label for="password">Password</label><br>
-                <input type="text" name="password" id="password"><br>
+                <input type="text" name="password" id="password" required><br>
                 <button id="btn-login" type="submit" name="login">Login</button>
             </form>
             <a href="register.php">Belum punya akun?</a>

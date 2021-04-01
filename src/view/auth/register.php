@@ -19,37 +19,37 @@
             <form action="post" id="form-register">
                 <div class="inner-form">
                     <label for="nama">Nama</label><br>
-                    <input type="text" id="nama" name="nama"><br>
+                    <input type="text" id="nama" name="nama" required><br>
 
                     <label for="alamat">Alamat</label><br>
-                    <textarea type="text" id="alamat" name="alamat"></textarea><br>
+                    <textarea type="text" id="alamat" name="alamat" required></textarea><br>
 
-                    <label style="margin-right: 280px;" for="provinsi">Provinsi</label>
+                    <label for="provinsi">Provinsi</label>
+                    <select class="select" type="text" id="provinsi" name="provinsi" required></select><br>
+
                     <label for="kota">Kota</label><br>
+                    <select class="select" type="text" id="kota" name="kota" required></select><br>
 
-                    <input style="width: 40%; margin-right: 95px;" type="text" id="provinsi" name="provinsi">
-                    <input style="width: 40%;" type="text" id="kota" name="kota"><br>
+                    <label for="kecamatan">Kecamatan</label>
+                    <select class="select" type="text" id="kecamatan" name="kecamatan" required></select><br>
 
-                    <label style="margin-right: 245px;" for="kecamatan">Kecamatan</label>
                     <label for="kelurahan">Kelurahan</label><br>
-
-                    <input style="width: 40%; margin-right: 95px;" type="text" id="kecamatan" name="kecamatan">
-                    <input style="width: 40%;" type="text" id="kelurahan" name="kelurahan"><br>
+                    <select class="select" type="text" id="kelurahan" name="kelurahan" required></select><br>
 
                     <label for="telepon">No Telepon</label><br>
-                    <input type="text" id="telepon" name="telepon"><br>
+                    <input type="text" id="telepon" name="telepon" required><br>
 
                     <label for="username">Username</label><br>
-                    <input type="text" id="username" name="username"><br>
+                    <input type="text" id="username" name="username" required><br>
 
                     <label for="password">Password</label><br>
-                    <input type="password" name="password" id="password"><br>
+                    <input type="password" name="password" id="password" required><br>
 
                     <label for="con-password">Confirm Password</label><br>
-                    <input type="password" name="con-password" id="con-password"><br>
+                    <input type="password" name="con-password" id="con-password" required><br>
                     
                     <label for="mendaftar">Mendaftar Sebagai</label><br>
-                    <select class="select" name="mendaftar" id="mendaftar">
+                    <select class="select" name="mendaftar" id="mendaftar" required>
                         <option value="0">Pencari ART</option>
                         <option value="1">ART</option>
                     </select>
@@ -60,6 +60,6 @@
         </div> 
         
     </div>
-
+<script src="../../assets/js/register.js"></script>
 </body>
 </html>
