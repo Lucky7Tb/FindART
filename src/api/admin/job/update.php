@@ -6,7 +6,7 @@ require __DIR__ . '/../../../helpers/query.php';
 require __DIR__ . '/../../../helpers/upload_img.php';
 $app = config();
 
-$jobId = $_POST['job_id'];
+$jobId = $_POST['id'];
 $photoId = $_POST['photo_id'];
 $jobDescription = $_POST['job_description'];
 $jobPayment = $_POST['job_payment'];
