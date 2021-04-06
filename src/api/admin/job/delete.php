@@ -5,7 +5,7 @@ require __DIR__ . '/../../../helpers/helpers.php';
 require __DIR__ . '/../../../helpers/query.php';
 $app = config();
 
-$id = $_POST['job_id'];
+$jobId = $_POST['id'];
 
 $jobThumbnail = select("
 	SELECT photos.photo_url, photos.id
@@ -20,7 +20,7 @@ if (file_exists($app['uploadDir']. $thumbnail[1])) {
 	unlink($app['uploadDir'] . $thumbnail[1]);
 }
 
-$isDeleted = delete("DELETE FROM job_vacancy WHERE job_vacancy.id = '$id'");
+$isDeleted = delete("DELETE FROM job_vacancy WHERE job_vacancy.id = '$jobId'");
 
 if ($isDeleted) {
 	$isDeleted = delete("DELETE FROM photos WHERE photos.id = '".$jobThumbnail[0]['id']."'");
