@@ -1,5 +1,5 @@
 	<footer>
-		<p class="footer">Copyright FindART. 2021 Made With Love</p>
+		<p class="footer">&copy; FindART 2021. Made With &#10084;</p>
 	</footer>
 	</body>
 

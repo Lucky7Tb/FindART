@@ -89,10 +89,10 @@ body {
 }
 
 footer {
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		padding: 25px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 25px;
     color: #fff;
     font-weight: bold;
     background-color: #006AA8;
