@@ -11,10 +11,10 @@ $jobThumbnail = select("
 	SELECT photos.photo_url, photos.id
 	FROM job_vacancy
 	JOIN photos ON photos.id = job_vacancy.photo_id
-	WHERE job_vacancy.id = '$id';
+	WHERE job_vacancy.id = '$jobId';
 ");
 
-$thumbnail = explode($app['src']['image'], $jobThumbnail[0]['photo_url']);
+$thumbnail = explode($app['src']['image'].'dist/', $jobThumbnail[0]['photo_url']);
 
 if (file_exists($app['uploadDir']. $thumbnail[1])) {
 	unlink($app['uploadDir'] . $thumbnail[1]);

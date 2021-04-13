@@ -32,13 +32,13 @@ if ($isUpdated != -1) {
 			WHERE photos.id = '$photoId';
 		");
 
-		$thumbnail = explode($app['src']['image'], $jobThumbnail[0]['photo_url']);
+		$thumbnail = explode($app['src']['image'].'dist/', $jobThumbnail[0]['photo_url']);
 
 		if (file_exists($app['uploadDir'] . $thumbnail[1])) {
 			unlink($app['uploadDir'] . $thumbnail[1]);
 		}
 
-		$photoPath = $app['src']['image'] . $photo['fileName'];
+		$photoPath = $app['src']['image']. 'dist/' .$photo['fileName'];
 		$photoId = save("
 		UPDATE photos SET `photo_url` = '$photoPath', `updated_at` = '$updatedAt' WHERE photos.id = '$photoId'
 	");

@@ -6,7 +6,7 @@ require __DIR__. '/../../../helpers/query.php';
 require __DIR__. '/../../../helpers/upload_img.php';
 $app = config();
 
-$userId = $_SESSION['user'][0]['id'];
+$userId = $_SESSION['user']['id'];
 $artFinderId = select("SELECT id FROM art_finder WHERE user_id = '$userId'");
 $artFinderId = $artFinderId[0]['id'];
 $jobDescription = $_POST['job_description'];
@@ -23,7 +23,7 @@ if (!$photo['success']) {
 	response(400, null, 'Harap perhatikan format dan ukuran foto', null);
 }
 
-$photoPath = $app['src']['image'] . $photo['fileName'];
+$photoPath = $app['src']['image'] . 'dist/' . $photo['fileName'];
 $photoId = save("
 	INSERT INTO photos (`photo_url`, `created_at`, `updated_at`)
 	VALUES('$photoPath', '$createdAt', '$updatedAt');

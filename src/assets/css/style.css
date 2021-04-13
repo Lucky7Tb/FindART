@@ -1,0 +1,143 @@
+@import url('./variabel.css');
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+
+.container {
+	padding: 3em;
+}
+
+nav {
+	width: 100%;
+	background-color: var(--primary-color);
+	padding: 0.5em;
+	margin-bottom: 3em;
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 10px;
+	font-size: 24px;
+}
+
+nav ul li a {
+	color: var(--white);
+	text-decoration: none;
+}
+
+nav ul {
+	text-align: center;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	padding: 10px;
+	color: var(--white);
+	font-weight: bold;
+	background-color: var(--primary-color);
+	text-align: center;
+}
+
+form div {
+	margin-bottom: 1.5em;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.inner-form label,
+.file-upload label {
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--black);
+	display: block;
+}
+
+.inner-form input {
+	width: 95%;
+	padding: 10px 20px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	background: var(--white);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
+	font-size: 15px;
+	font-weight: bold;
+	border: 0;
+	border-radius: 10px;
+}
+
+.inner-form input:focus {
+	outline: none;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	box-shadow: 4px 4px 10px #dddddd;
+}
+
+.file-upload input {
+	z-index: -1;
+	top: 6px;
+	left: 0;
+	font-size: 15px;
+	color: rgb(153, 153, 153);
+}
+
+.primary-button {
+	background-color: var(--primary-color);
+	color: var(--white);
+	border-radius: 5px;
+	padding: 8px;
+	text-decoration: none;
+}
+
+.primary-button-lg {
+	background-color: var(--primary-color);
+	color: var(--white);
+	border: none;
+	border-radius: 5px;
+	padding: 8px;
+	text-decoration: none;
+	width: 100px;
+	height: 3em;
+	font-size: 16px;
+}
+
+.info-button {
+	background-color: var(--info-color);
+	color: var(--white);
+	border-radius: 5px;
+	padding: 8px;
+	text-decoration: none;
+}
+
+.warning-button {
+	background-color: var(--warning-color);
+	color: var(--white);
+	border-radius: 5px;
+	padding: 8px;
+	text-decoration: none;
+}
+
+.danger-button {
+	background-color: var(--danger-color);
+	color: var(--white);
+	border-radius: 5px;
+	padding: 8px;
+	text-decoration: none;
+}
+
+.button-thumbnail {
+	text-decoration: none;
+	font-weight: 700;
+	color: var(--primary-color);
+}
+
+.primary-button:hover, .primary-button-lg:hover{
+	cursor: pointer;
+}	

@@ -104,4 +104,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+#Upload image
+/src/assets/img/dist/*
+
 # End of https://www.toptal.com/developers/gitignore/api/vscode,windows,linux

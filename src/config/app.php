@@ -12,7 +12,7 @@ function config()
 			'js' => BASEURL.'/src/assets/js/',
 		],
 		'template' => __DIR__ . '/../view/template/',
-		'uploadDir' => __DIR__ . '/../assets/img/'
+		'uploadDir' => __DIR__ . '/../assets/img/dist/'
 	];
 
 	return $app;
