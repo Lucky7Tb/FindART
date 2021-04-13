@@ -88,10 +88,7 @@ body {
     width: 90%;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.footer {
     padding: 25px;
     color: #fff;
     font-weight: bold;
