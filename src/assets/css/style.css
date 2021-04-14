@@ -1,7 +1,8 @@
 @import url('./variabel.css');
 
 * {
-	font-family: "Montserrat", sans-serif;
+	margin: 0;
+  font-family: "Montserrat", sans-serif;
 	box-sizing: border-box;
 }
 
@@ -9,26 +10,39 @@
 	padding: 3em;
 }
 
-nav {
-	width: 100%;
-	background-color: var(--primary-color);
-	padding: 0.5em;
-	margin-bottom: 3em;
+.header img {
+	width: 25%;
 }
 
-nav ul li {
-	display: inline-block;
-	padding: 10px;
-	font-size: 24px;
+.header {
+	padding: 10px 0;
+	margin-bottom: 20px;
 }
 
-nav ul li a {
-	color: var(--white);
-	text-decoration: none;
+.navbar {
+	max-width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: #006AA8;
 }
 
-nav ul {
+.navbar li {
+	display: inline;
+	float: left;
+	list-style: none;
+	font-weight: bold;
 	text-align: center;
+	color: #FFFFFF;
+	padding: 15px 30px;
+}
+
+.navbar li a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.navbar li:hover {
+  background-color: #017ac0;
 }
 
 footer {
@@ -37,7 +51,7 @@ footer {
 	left: 0;
 	right: 0;
 	width: 100%;
-	padding: 10px;
+	padding: 15px;
 	color: var(--white);
 	font-weight: bold;
 	background-color: var(--primary-color);

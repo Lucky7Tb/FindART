@@ -124,6 +124,14 @@ function getInterestedART(jobId) {
 	});
 }
 
+function getMyART() {
+	return fetch(`${baseUrl}/src/api/admin/art/get.php`, {
+		method: "GET",
+	}).then(function (response) {
+		return response.json();
+	});
+}
+
 function getDetailART(artId) {
 	return fetch(`${baseUrl}/src/api/art/detail-art.php?id=${artId}`, {
 		method: 'GET',
@@ -140,4 +148,13 @@ function getSkillART(artId) {
 	.then(function (response) {
 		return response.json();
 	})
+}
+
+function chooseART(formData) {
+	return fetch(`${baseUrl}/src/api/admin/job/select-art.php`, {
+		method: "POST",
+		body: formData
+	}).then(function (response) {
+		return response.json();
+	});
 }

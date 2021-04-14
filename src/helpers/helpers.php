@@ -26,7 +26,7 @@ function checkIsLogin()
 {
 	if (!isset($_SESSION['user'])) {
 		header("Location:" . BASEURL . "/src/view/auth/login.php");
-		exit();
+		die();
 	}
 }
 
@@ -36,13 +36,29 @@ function checkUser()
 		switch ($_SESSION['user']['role']) {
 			case '0':
 				header("Location:" . BASEURL . "/src/view/admin/");
-				exit();
+				die();
 				break;
 			case '1':
 				header("Location:" . BASEURL . "/src/view/art/");
-				exit();
+				die();
 				break;
 		}
+	}
+}
+
+function checkIsNotAdmin()
+{
+	if ($_SESSION['user']['role'] !== '0') {
+		header("Location:" . BASEURL . "/src/view/art/");
+		die();
+	}
+}
+
+function checkIsNotART()
+{
+	if ($_SESSION['user']['role'] !== '1') {
+		header("Location:" . BASEURL . "/src/view/admin/");
+		die();
 	}
 }
 

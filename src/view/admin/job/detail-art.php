@@ -24,7 +24,7 @@ require $app['template'] . 'admin/header.php';
 				const art = response.data[0];
 				const artContainer = document.getElementById('art-container');
 				content += `
-					<div class="card">
+					<div class="card" style="margin-top: 3em">
 						<div class="row">
 							<div class="col-12">
 								<h1 class="text-center">${art.art_name}</h1>

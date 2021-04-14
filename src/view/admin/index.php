@@ -7,8 +7,8 @@ require $app['template'] . 'admin/header.php';
 
 <div class="container">
 	<?php require $app['template'] . 'admin/navbar.php'; ?>
-	
-	<div class="col-12">
+
+	<div class="col-12" style="margin-top: 2em;">
 		<a href="./job/create.php" class="primary-button">
 			<img src="<?= $app['src']['image'] . 'icon/plus.svg' ?>" alt="plus">
 			Tambah lowongan

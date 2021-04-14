@@ -1,0 +1,133 @@
+form {
+    display: block;
+    margin: 20px 0;
+}
+
+form select {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 505px;
+    padding: 10px 0;
+    margin-right: 10px;
+}
+
+form #cari {
+    background-image: url(../img/search.png);
+    background: #006AA8;
+    font-weight: bold;
+    align-items: center;
+    color: #FFFFFF;
+    border: 2px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.card {
+    background: #F2F0F0;
+    padding: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.left {
+    display: inline-block;
+    float: left;
+    width: 70%;
+}
+
+.card img {
+    display: block;
+    float: left;
+    width: 30%;
+    margin-right: 20px;
+}
+
+.card-header {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 600;
+    float: left;
+    padding: 5px 0;
+    margin-right: 10px;
+}
+
+.user {
+    color: #1E435F;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 0 0 15px 0;
+}
+
+.location {
+    display: inline;
+    color: #3F3C3C;
+    font-weight: 500;
+}
+
+.link {
+    display: inline-block;
+    float: right;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    background: #C4C4C4;
+    border-radius: 5px;
+    padding: 10px 30px;
+    margin-top: 110px;
+    margin-right: 30px;
+}
+
+.detail-left {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    margin-right: 15px;
+}
+
+.detail-left img {
+    width: 90%;
+    margin-bottom: 15px;
+}
+
+.detail-left h1 {
+    color: #081C2B;
+    margin: 15px 0;
+}
+
+.finder {
+    background: #E5E5E5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.finder img {
+    width: 25%;
+}
+
+.finder a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #000000;
+}
+
+.detail-right {
+    padding: 15px;
+}
+
+.detail-right p {
+    padding: 5px 0;
+}
+
+.apply-button {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    background: #006AA8;
+    color: #ECF8FF;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 15px 0px;
+    margin: 30px 450px;
+}
