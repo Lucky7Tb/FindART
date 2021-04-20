@@ -26,7 +26,6 @@ function save($query)
 	if($result){
 		$insertedId = mysqli_insert_id($connection);
 	}
-
 	return $insertedId;	
 }
 

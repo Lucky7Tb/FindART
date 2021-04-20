@@ -27,5 +27,8 @@
     
 
 	<script src="<?= $app['src']['js'].'app.js' ?>"></script>
-  <script src="<?= $app['src']['js'].'art/menu.js' ?>"></script>
+  <script src="<?= $app['src']['js']. 'art/menu.js' ?>"></script>
+  <script>
+    getJob()
+  </script>
 <?php require $app['template'].'art/footer.php' ?>

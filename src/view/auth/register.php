@@ -21,10 +21,10 @@
 			<form action="post" id="form-register">
 				<div class="inner-form">
 					<label for="nama">Nama</label><br>
-					<input type="text" id="nama" name="nama" required><br>
+					<input type="text" id="nama" name="nama" autocomplete="off" required><br>
 
 					<label for="alamat">Alamat</label><br>
-					<textarea type="text" id="alamat" name="alamat" required></textarea><br>
+					<textarea type="text" id="alamat" name="alamat" autocomplete="off" required></textarea><br>
 
 					<label for="provinsi">Provinsi</label>
 					<select class="select" type="text" id="provinsi" name="provinsi" required></select><br>
@@ -42,7 +42,7 @@
 					<input type="text" id="telepon" name="telepon" required><br>
 
 					<label for="username">Username</label><br>
-					<input type="text" id="username" name="username" required><br>
+					<input type="text" id="username" name="username" autocomplete="off" required><br>
 
 					<label for="password">Password</label><br>
 					<input type="password" name="password" id="password" required><br>
