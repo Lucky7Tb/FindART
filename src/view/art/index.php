@@ -19,37 +19,13 @@
       <input type="submit" name="cari" id="cari" value="Cari">
     </form>
 
-    <div class="card">
-      <div class="left">
-        <img src="../../assets/img/contoh.png" alt="gambar.png">
-        <p class="card-header">Rp 1.800.000 </p><p style="padding: 15px;">/bulan</p>
-        <p class="user">Ibu Ratna</p>
-        <p style="padding: 0 0 15px 0;">Dicari Asisten Rumah Tangga (ART)</p>
-        <p class="location">Bandung, Jawa Barat</p>
-      </div>
-      <a class="link" href="detail.php">Detail</a>
+    <div id="data-lowongan">
+      
     </div>
-    <div class="card">
-      <div class="left">
-        <img src="../../assets/img/contoh.png" alt="gambar.png">
-        <p class="card-header">Rp 1.800.000 </p><p style="padding: 15px;">/bulan</p>
-        <p class="user">Ibu Ratna</p>
-        <p style="padding: 0 0 15px 0;">Dicari Asisten Rumah Tangga (ART)</p>
-        <p class="location">Bandung, Jawa Barat</p>
-      </div>
-      <a class="link" href="detail.php">Detail</a>
+
     </div>
-    <div class="card">
-      <div class="left">
-        <img src="../../assets/img/contoh.png" alt="gambar.png">
-        <p class="card-header">Rp 1.800.000 </p><p style="padding: 15px;">/bulan</p>
-        <p class="user">Ibu Ratna</p>
-        <p style="padding: 0 0 15px 0;">Dicari Asisten Rumah Tangga (ART)</p>
-        <p class="location">Bandung, Jawa Barat</p>
-      </div>
-      <a class="link" href="detail.php">Detail</a>
-    </div>
-  </div>
+    
 
 	<script src="<?= $app['src']['js'].'app.js' ?>"></script>
+  <script src="<?= $app['src']['js'].'art/menu.js' ?>"></script>
 <?php require $app['template'].'art/footer.php' ?>
