@@ -46,11 +46,12 @@ function getDetailJob(id) {
 }
 
 function postJob(formData) {
-	fetch(`${baseUrl}/src/api/admin/job/post.php`, {
+	fetch(`http://localhost/findart/src/api/admin/job/post.php`, {
 		method: "POST",
 		body: formData,
 	})
 		.then(function (response) {
+			console.log(response);
 			return response.json();
 		})
 		.then(function (response) {
