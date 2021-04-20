@@ -11,7 +11,7 @@ $artFinderId = select("
 $artFinderId = $artFinderId[0]['id'];
 
 $query = "
-	SELECT art.id, art.full_name AS art_name, users.contact_number AS art_number, photos.photo_url AS art_photo
+	SELECT art.id AS art_id, art.full_name AS art_name, users.contact_number AS art_number, photos.photo_url AS art_photo
 	FROM art_accepted_job
 	JOIN art ON art.id = art_accepted_job.art_id
 	JOIN users ON users.id = art.user_id

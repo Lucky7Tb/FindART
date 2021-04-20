@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 30, 2021 at 03:11 PM
+-- Generation Time: Apr 20, 2021 at 08:01 AM
 -- Server version: 10.4.17-MariaDB-log
 -- PHP Version: 7.4.13
 
@@ -31,10 +31,20 @@ CREATE TABLE `art` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `full_name` varchar(80) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `art_description` text DEFAULT NULL,
   `job_status` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `art`
+--
+
+INSERT INTO `art` (`id`, `user_id`, `full_name`, `art_description`, `job_status`, `created_at`, `updated_at`) VALUES
+(3, 18, 'Dira-art1', '', 1, '2021-04-11 23:19:41', '2021-04-11 23:19:41'),
+(4, 19, 'dira-art2', '', 1, '2021-04-11 23:21:18', '2021-04-11 23:21:18'),
+(5, 20, 'Dira-art3', '', 0, '2021-04-11 23:22:03', '2021-04-11 23:22:03');
 
 -- --------------------------------------------------------
 
@@ -51,6 +61,13 @@ CREATE TABLE `art_accepted_job` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `art_accepted_job`
+--
+
+INSERT INTO `art_accepted_job` (`id`, `art_id`, `art_finder_id`, `job_vacancy_id`, `job_status`, `created_at`, `updated_at`) VALUES
+(9, 4, 3, 12, 1, '2021-04-14 22:04:33', '2021-04-14 22:04:33');
 
 -- --------------------------------------------------------
 
@@ -71,15 +88,16 @@ CREATE TABLE `art_finder` (
 --
 
 INSERT INTO `art_finder` (`id`, `user_id`, `full_name`, `created_at`, `updated_at`) VALUES
-(3, 15, 'Lucky Finder ART', '2021-03-29 23:14:17', '2021-03-29 23:14:17');
+(3, 15, 'Lucky Finder ART', '2021-03-29 23:14:17', '2021-03-29 23:14:17'),
+(4, 17, 'Lucky finder art 2', '2021-04-07 00:03:39', '2021-04-07 00:03:39');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `art_interested_ job`
+-- Table structure for table `art_interested_job`
 --
 
-CREATE TABLE `art_interested_ job` (
+CREATE TABLE `art_interested_job` (
   `id` int(11) NOT NULL,
   `art_id` int(11) NOT NULL,
   `job_vacancy_id` int(11) NOT NULL,
@@ -87,6 +105,15 @@ CREATE TABLE `art_interested_ job` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `art_interested_job`
+--
+
+INSERT INTO `art_interested_job` (`id`, `art_id`, `job_vacancy_id`, `job_status`, `created_at`, `updated_at`) VALUES
+(2, 3, 12, 0, NULL, '2021-04-14 22:04:33'),
+(3, 4, 12, 0, NULL, '2021-04-14 22:04:33'),
+(4, 5, 12, 0, NULL, '2021-04-14 22:04:33');
 
 -- --------------------------------------------------------
 
@@ -102,6 +129,36 @@ CREATE TABLE `art_rating` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `art_rating`
+--
+
+INSERT INTO `art_rating` (`id`, `art_id`, `art_finder_id`, `rating`, `created_at`, `updated_at`) VALUES
+(1, 3, 3, 5, NULL, NULL),
+(2, 3, 3, 5, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `art_skill`
+--
+
+CREATE TABLE `art_skill` (
+  `id` int(11) NOT NULL,
+  `art_id` int(11) NOT NULL,
+  `skill` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `art_skill`
+--
+
+INSERT INTO `art_skill` (`id`, `art_id`, `skill`, `created_at`, `updated_at`) VALUES
+(1, 3, 'Memasak', '2021-04-13 22:56:35', '2021-04-13 22:56:35'),
+(2, 3, 'Mencuci', '2021-04-13 22:56:35', '2021-04-13 22:56:35');
 
 -- --------------------------------------------------------
 
@@ -7895,7 +7952,8 @@ CREATE TABLE `job_vacancy` (
 --
 
 INSERT INTO `job_vacancy` (`id`, `art_finder_id`, `photo_id`, `job_description`, `job_payment`, `job_due_date`, `is_visible`, `created_at`, `updated_at`) VALUES
-(2, 3, 1, 'fwefwefewf', '323232', '2021-03-29', 1, '2021-03-29 23:14:47', '2021-03-29 23:14:48');
+(12, 3, 19, '<p>regergerg</p>', '500000', '2021-04-30', 1, '2021-04-07 22:28:43', '2021-04-14 22:04:33'),
+(14, 3, 21, '<p>Lorem ipsi=um dolor sit amet</p><p><br></p><p>ini deskreipsi</p><p><br></p><ol><li>Bisa ini</li><li>Bisa itu </li><li>bisa masak</li><li>Yambah ini</li></ol>', '1500000', '2021-04-23', 1, '2021-04-14 09:37:25', '2021-04-14 09:41:08');
 
 -- --------------------------------------------------------
 
@@ -7915,7 +7973,9 @@ CREATE TABLE `photos` (
 --
 
 INSERT INTO `photos` (`id`, `photo_url`, `created_at`, `updated_at`) VALUES
-(1, 'http://localhost/findart/src/assets/img/avatar.png', '2021-03-29 23:08:10', '2021-03-29 23:08:11');
+(1, 'http://localhost/findart/src/assets/img/dist/avatar.png', '2021-03-29 23:08:10', '2021-03-29 23:08:11'),
+(19, 'http://localhost/findart/src/assets/img/dist/20210407222843KTM_Lucky.PNG', '2021-04-07 22:28:43', '2021-04-07 22:28:43'),
+(21, 'http://localhost/findart/src/assets/img/dist/20210414093725KTM_Lucky.PNG', '2021-04-14 09:37:25', '2021-04-14 09:37:25');
 
 -- --------------------------------------------------------
 
@@ -88609,7 +88669,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `province_id`, `city_id`, `district_id`, `sub_district_id`, `photo_id`, `username`, `password`, `contact_number`, `address`, `role`, `created_at`, `updated_at`) VALUES
-(15, '11', '1101', '1101010', '1101010001', 1, 'luckyfinder', '$2y$10$.rujMCS00d9PfnAjc9yc5OYA7hySYIm/Zn3Yjz4rfKyiVEJCxk19G', '08918898', 'Bandung', 0, '2021-03-29 23:14:17', '2021-03-29 23:14:17');
+(15, '11', '1101', '1101010', '1101010001', 1, 'luckyfinder', '$2y$10$.rujMCS00d9PfnAjc9yc5OYA7hySYIm/Zn3Yjz4rfKyiVEJCxk19G', '08918898', 'Bandung', 0, '2021-03-29 23:14:17', '2021-03-29 23:14:17'),
+(17, '32', '3204', '3204260', '3204260003', 1, 'luckyfinder2', '$2y$10$N6yOFZyXWgtpiD/S9iwJ2.uYpeW6qfrkNusoDN9sOMQdPMFNw/l5C', '0898989909', 'bandung', 0, '2021-04-07 00:03:39', '2021-04-07 00:03:39'),
+(18, '12', '1215', '1215050', '1215050017', 1, 'ART1', '$2y$10$iH5sw.1ZLTUvaR6eypMXEuk0onhc4oED6RIoPyelAWN4/kOriqzqm', '089565655', 'Dimana aja', 1, '2021-04-11 23:19:41', '2021-04-11 23:19:41'),
+(19, '13', '1302', '1302012', '1302012005', 1, 'ART2', '$2y$10$yAL2lZ0K3rJuHwR27jjJbeJI18YdEMBmqLPNJxG8fXJTN8iwqcO5u', '028898855', 'dimanaja', 1, '2021-04-11 23:21:18', '2021-04-11 23:21:18'),
+(20, '11', '1113', '1113020', '1113020017', 1, 'ART3', '$2y$10$5AfC1216ZdD0RMFNk8n1XuEgMdNzEUrA4HaDGzrK20wSbfxvGcuJe', '0896658789', 'DIMANAJA', 1, '2021-04-11 23:22:03', '2021-04-11 23:22:03');
 
 --
 -- Indexes for dumped tables
@@ -88639,9 +88703,9 @@ ALTER TABLE `art_finder`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `art_interested_ job`
+-- Indexes for table `art_interested_job`
 --
-ALTER TABLE `art_interested_ job`
+ALTER TABLE `art_interested_job`
   ADD PRIMARY KEY (`id`),
   ADD KEY `art_id` (`art_id`),
   ADD KEY `job_vacancy_id` (`job_vacancy_id`);
@@ -88653,6 +88717,13 @@ ALTER TABLE `art_rating`
   ADD PRIMARY KEY (`id`),
   ADD KEY `art_id` (`art_id`),
   ADD KEY `art_finder_rating` (`art_finder_id`);
+
+--
+-- Indexes for table `art_skill`
+--
+ALTER TABLE `art_skill`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `art_id` (`art_id`);
 
 --
 -- Indexes for table `cities`
@@ -88715,49 +88786,55 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `art`
 --
 ALTER TABLE `art`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `art_accepted_job`
 --
 ALTER TABLE `art_accepted_job`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `art_finder`
 --
 ALTER TABLE `art_finder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `art_interested_ job`
+-- AUTO_INCREMENT for table `art_interested_job`
 --
-ALTER TABLE `art_interested_ job`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `art_interested_job`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `art_rating`
 --
 ALTER TABLE `art_rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `art_skill`
+--
+ALTER TABLE `art_skill`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `job_vacancy`
 --
 ALTER TABLE `job_vacancy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
@@ -88770,15 +88847,23 @@ ALTER TABLE `art`
   ADD CONSTRAINT `FK_ART_TO_USERS` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `art_accepted_job`
+--
+ALTER TABLE `art_accepted_job`
+  ADD CONSTRAINT `ART_ACCEPTED_JOB_TO_ART` FOREIGN KEY (`art_id`) REFERENCES `art` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `ART_ACCEPTED_JOB_TO_ART_FINDER` FOREIGN KEY (`art_finder_id`) REFERENCES `art_finder` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `ART_ACCEPTED_JOB_TO_JOB_VACANCY` FOREIGN KEY (`job_vacancy_id`) REFERENCES `job_vacancy` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `art_finder`
 --
 ALTER TABLE `art_finder`
   ADD CONSTRAINT `FK_ART_FINDER_TO_USERS` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `art_interested_ job`
+-- Constraints for table `art_interested_job`
 --
-ALTER TABLE `art_interested_ job`
+ALTER TABLE `art_interested_job`
   ADD CONSTRAINT `FK_ART_INTERESTED_JOB_TO_ART` FOREIGN KEY (`art_id`) REFERENCES `art` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_ART_INTERESTED_JOB_TO_JOB_VACANCY` FOREIGN KEY (`job_vacancy_id`) REFERENCES `job_vacancy` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -88788,6 +88873,12 @@ ALTER TABLE `art_interested_ job`
 ALTER TABLE `art_rating`
   ADD CONSTRAINT `FK_ART_RATING_TO_ART` FOREIGN KEY (`art_id`) REFERENCES `art` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_ART_RATING_TO_ART_FINDER` FOREIGN KEY (`art_finder_id`) REFERENCES `art_finder` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `art_skill`
+--
+ALTER TABLE `art_skill`
+  ADD CONSTRAINT `FK_ART_SKILL_TO_ART` FOREIGN KEY (`art_id`) REFERENCES `art` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `cities`

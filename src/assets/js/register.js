@@ -136,3 +136,11 @@ formRegister.addEventListener('submit', function(e) {
       alert(error);
     })
 })
+
+function toggleSkill(form) {
+	if (form.value === "0") {
+		document.getElementById('art_skill_container').style.display = 'none';
+	} else {
+		document.getElementById('art_skill_container').style.display = 'block';
+	}
+}

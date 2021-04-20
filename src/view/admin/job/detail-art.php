@@ -48,7 +48,7 @@ require $app['template'] . 'admin/header.php';
 								<strong>Alamat: ${art.address}</strong>
 							</div>
 							<div class="col-12">
-								<strong>Alamat: ${art.art_description ? art.art_description : '-' }</strong>
+								<strong>Deskripsi: ${art.art_description ? art.art_description : '-' }</strong>
 							</div>
 							<div class="col-12" id="skill-container">
 							</div>
