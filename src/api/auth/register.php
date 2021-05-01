@@ -31,7 +31,7 @@ if ($password == $confirmPassword) {
 	$table = $isART ? 'art' : 'art_finder';
 
 	$insertedId = save("
-		INSERT INTO {$table} (`user_id`, `full_name`, `created_at`, `updated_at`) 
+		INSERT INTO `$table` (`user_id`, `full_name`, `created_at`, `updated_at`) 
 		VALUES ('$userId', '$fullName', '$createdAt', '$updatedAt');
 	");
 

@@ -88,7 +88,34 @@ form div {
 	border-radius: 10px;
 }
 
-.inner-form input:focus {
+.inner-form textarea {
+	width: 95%;
+	padding: 10px 20px;
+	background: var(--white);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
+	resize: vertical;
+	font-size: 15px;
+	font-weight: bold;
+	border: 0;
+	border-radius: 10px;
+}
+
+.inner-form select {
+	width: 95%;
+	padding: 10px 20px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	background: var(--white);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
+	font-size: 15px;
+	font-weight: bold;
+	border: 0;
+	border-radius: 10px;
+}
+
+.inner-form input:focus, textarea:focus {
 	outline: none;
 	border: 1px solid rgba(0, 0, 0, 0.25);
 	box-shadow: 4px 4px 10px #dddddd;
@@ -136,6 +163,22 @@ form div {
 	border-radius: 5px;
 	padding: 8px;
 	text-decoration: none;
+}
+
+.warning-button-lg {
+	background-color: var(--warning-color);
+	color: var(--white);
+	border: none;
+	border-radius: 5px;
+	padding: 8px;
+	text-decoration: none;
+	width: 100px;
+	height: 3em;
+	font-size: 16px;
+}
+
+.warning-button-lg:hover {
+	cursor: pointer;
 }
 
 .danger-button {

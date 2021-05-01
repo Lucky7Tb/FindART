@@ -43,12 +43,13 @@ require $app['template'] . 'art/header.php';
 							<div class="col-6 finder">
 								<img src="../../assets/img/avatar.png" alt="avatar">
 								<p style="font-weight: 600; font-size: 20px; padding: 20px 0 5px 0;">${data.finder}</p><br>
-								<p>Kontak: ${data.contact}</p>
 							</div>
 						</div>
 						<div class="detail-right">
 							<p style="font-weight: 600;">DESKRIPSI</p>
-							${data.job_description}
+							<div>
+								${data.job_description}
+							</div>
 						</div>
 					</div>
 					`

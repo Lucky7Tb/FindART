@@ -7,7 +7,7 @@ require __DIR__ . '/../../helpers/query.php';
 $jobId = $_GET['id'];
 
 $query = "
-        SELECT job_vacancy.id, job_vacancy.photo_id, job_vacancy.job_description, job_vacancy.job_payment, art_finder.full_name AS finder, photos.photo_url AS thumbnail, users.address AS address, users.contact_number AS contact 
+        SELECT job_vacancy.id, job_vacancy.photo_id, job_vacancy.job_description, job_vacancy.job_payment, art_finder.full_name AS finder, photos.photo_url AS thumbnail, users.address AS address
         FROM job_vacancy 
         JOIN art_finder ON art_finder.id = job_vacancy.art_finder_id 
         JOIN photos ON photos.id = job_vacancy.photo_id 

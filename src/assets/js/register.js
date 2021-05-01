@@ -14,29 +14,29 @@ const formRegister = document.getElementById('form-register');
 getProvinsi();
 
 function getProvinsi() {
-  fetch("http://localhost/findart/src/api/location/getProvince.php", {
-    method: "GET",
-  })
-    .then(function (response) {
-      return response.json();
-    })
-    .then (function (response) {
-      if (response.code > 200) {
-        throw new Error(response.message);
-      }
+  fetch(`${baseUrl}/src/api/location/getProvince.php`, {
+		method: 'GET',
+	})
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (response) {
+			if (response.code > 200) {
+				throw new Error(response.message);
+			}
 
-      let content = "";
-      response.data.forEach(data => {
-        content += `
+			let content = '';
+			response.data.forEach((data) => {
+				content += `
           <option value="${data.id}">${data.name}</option>
-        `
-      });
-      provinsi.innerHTML = content;
-    })
+        `;
+			});
+			provinsi.innerHTML = content;
+		});
 }
 
 provinsi.addEventListener("change", function () {
-  fetch("http://localhost/findart/src/api/location/getCity.php?province_id=" + provinsi.value, {
+  fetch(`${baseUrl}/src/api/location/getCity.php?province_id=` + provinsi.value, {
     method: "GET",
   })
     .then(function (response) {
@@ -58,29 +58,29 @@ provinsi.addEventListener("change", function () {
 })
 
 kota.addEventListener("change", function () {
-  fetch("http://localhost/findart/src/api/location/getDistrict.php?city_id=" + kota.value, {
-    method: "GET",
-  })
-    .then(function (response) {
-      return response.json();
-    })
-    .then (function (response) {
-      if (response.code > 200) {
-        throw new Error(response.message);
-      }
+  fetch(`${baseUrl}/src/api/location/getDistrict.php?city_id=` + kota.value, {
+		method: 'GET',
+	})
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (response) {
+			if (response.code > 200) {
+				throw new Error(response.message);
+			}
 
-      let content = "";
-      response.data.forEach(data => {
-        content += `
+			let content = '';
+			response.data.forEach((data) => {
+				content += `
           <option value="${data.id}">${data.name}</option>
-        `
-      });
-      kecamatan.innerHTML = content;
-    })
+        `;
+			});
+			kecamatan.innerHTML = content;
+		});
 })
 
 kecamatan.addEventListener("change", function () {
-  fetch("http://localhost/findart/src/api/location/getSubDistrict.php?district_id=" + kecamatan.value, {
+  fetch(`${baseUrl}/src/api/location/getSubDistrict.php?district_id=` + kecamatan.value, {
     method: "GET",
   })
     .then(function (response) {
@@ -118,23 +118,23 @@ formRegister.addEventListener('submit', function(e) {
   data.append("address", alamat.value);
   data.append("full_name", nama.value);
 
-  fetch("http://localhost/findart/src/api/auth/register.php", {
-    method: "POST",
-    body: data,
-  })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (response) {
-      if (response.code > 200) {
-        throw new Error(response.message);
-      }
+  fetch(`${baseUrl}/src/api/auth/register.php`, {
+		method: 'POST',
+		body: data,
+	})
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (response) {
+			if (response.code > 200) {
+				throw new Error(response.message);
+			}
 
-      window.location.href = "login.php";
-    })
-    .catch(function (error) {
-      alert(error);
-    })
+			window.location.href = 'login.php';
+		})
+		.catch(function (error) {
+			alert(error);
+		});
 })
 
 function toggleSkill(form) {

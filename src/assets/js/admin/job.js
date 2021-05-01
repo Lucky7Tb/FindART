@@ -158,3 +158,12 @@ function chooseART(formData) {
 		return response.json();
 	});
 }
+
+function fireART(formData) {
+	return fetch(`${baseUrl}/src/api/admin/art/fire-art.php`, {
+		method: 'POST',
+		body: formData
+	}).then(function (response) {
+		return response.json();
+	});
+}
