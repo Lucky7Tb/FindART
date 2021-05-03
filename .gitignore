@@ -106,5 +106,6 @@ $RECYCLE.BIN/
 
 #Upload image
 /src/assets/img/dist/*
+!/src/assets/img/dist/avatar.png
 
 # End of https://www.toptal.com/developers/gitignore/api/vscode,windows,linux
