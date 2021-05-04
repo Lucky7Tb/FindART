@@ -9,20 +9,10 @@ require $app['template'] . 'art/header.php';
 
 	<?php require $app['template'] . 'art/navbar.php'; ?>
 
-	<form action="">
-		<select name="provinsi" id="provinsi" placeholder="Provinsi">
-			<option value="" disabled selected hidden>Provinsi</option>
-		</select>
-		<select name="kota" id="kota">
-			<option value="" disabled selected hidden>Kota</option>
-		</select>
-		<input type="submit" name="cari" id="cari" value="Cari">
-	</form>
-
 	<div id="content">
 		
 	</div>
-	<a class="apply-button" href="">Apply</a>
+	<a class="apply-button" href="javascript:void(0)" onclick='applyJob()'>Apply</a>
 </div>
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>
 <script src="<?= $app['src']['js']. 'art/menu.js' ?>"></script>
@@ -55,6 +45,34 @@ require $app['template'] . 'art/header.php';
 					`
 			});
 			dataContent.innerHTML = content;
-		})
+		});
+	
+	function applyJob() {
+		const apply = confirm("Ingin mengambil job ini?");
+
+		if(apply) {
+			const formData = new FormData();
+			formData.append('job_vacancy_id', "<?= $_GET['id'];?>");
+
+			fetch(`${baseUrl}/src/api/art/applyJob.php`, {
+				method: "POST",
+				body: formData,
+			})
+			.then(function (response) {
+				return response.json();
+			})
+			.then(function (response) {
+				if (response.code > 200) {
+					throw new Error(response.message);
+				}
+
+				alert(response.message);
+				window.location.href = baseUrl + "/src/view/art/";
+			})
+			.catch(function (err) {
+				alert(err);
+			});
+		}
+	}
 </script>
 <?php require $app['template'] . 'art/footer.php' ?>
