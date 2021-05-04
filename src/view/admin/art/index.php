@@ -38,7 +38,8 @@ require $app['template'] . 'admin/header.php';
 								 <strong>Kontak: ${art.art_number}</strong>			
 								</p>		
 								<div style='text-align:center; margin-top: 1.5em'>
-										<a class='primary-button' href="https://api.whatsapp.com/send?phone=${number}&text=Halo%20saudara/i%20${art.art_name}%20sekarang%20anda%20bekerja%20dengan%20saya%20ya.%20Mohon%20kerjasamanya.">Chat</a>
+										<a class='primary-button' href="https://api.whatsapp.com/send?phone=${number}&text=Halo%20saudara/i%20${art.art_name}%20sekarang%20anda%20bekerja%20dengan%20saya%20ya.%20Mohon%20kerjasamanya.
+										++++++++++++3">Chat</a>
 								</div>
 								<div style="text-align:center; margin-top: 1.5em">
 									<a class="danger-button" href='${baseUrl}/src/view/admin/art/rating-art.php?art_id=${art.art_id}&id=${art.id}' onclick="return confirm('Yakin ingin memberhentikan ART ini?')">Berhentikan</a>
