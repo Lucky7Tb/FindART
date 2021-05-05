@@ -9,14 +9,14 @@
 
 		<?php require $app['template'].'art/navbar.php'?>
 
-		<form action="">
+		<form action="get" id="form-cari">
 			<select name="provinsi" id="provinsi" placeholder="Provinsi">
 				<option value="" disabled selected hidden>Provinsi</option>
 			</select>
 			<select name="kota" id="kota">
 				<option value="" disabled selected hidden>Kota</option>
 			</select>
-			<input type="submit" name="cari" id="cari" value="Cari">
+			<input type="submit" id="cari" value="Cari">
 		</form>
 
 		<div id="data-lowongan">

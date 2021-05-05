@@ -70,10 +70,8 @@ form #cari {
 .link {
     display: inline-block;
     float: right;
-    color: #000000;
     text-decoration: none;
     font-weight: 600;
-    background: #C4C4C4;
     border-radius: 5px;
     padding: 10px 30px;
     margin-top: 110px;
@@ -95,15 +93,6 @@ form #cari {
 .detail-left h1 {
     color: #081C2B;
     margin: 15px 0;
-}
-
-.finder {
-    background: #E5E5E5;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.finder img {
-    width: 25%;
 }
 
 .detail-right {
