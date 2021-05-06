@@ -13,8 +13,10 @@ $jobStatus = 0;
 $createdAt = getTodayDate();
 $updatedAt = getTodayDate();
 
-$cekData = select("SELECT art_id, job_vacancy_id FROM art_interested_job 
-                WHERE art_id = '$artId' AND job_vacancy_id = '$jobVacancyId'");
+$cekData = select("
+	SELECT `art_id`, `job_vacancy_id` FROM `art_interested_job` 
+	WHERE `art_id` = '$artId' AND `job_vacancy_id` = '$jobVacancyId'
+");
 
 if ($jobStatusArt > 0) {
     response(400, null, 'Anda sedang bekerja.');

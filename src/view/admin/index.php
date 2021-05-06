@@ -22,7 +22,8 @@ require $app['template'] . 'admin/header.php';
 					<tr>
 						<th>Thumbnail</th>
 						<th>Gaji</th>
-						<th>Tanggal berakhir</th>
+						<th>Tgl berakhir lowongan</th>
+						<th>Tgl perubahan</th>
 						<th>Aksi</th>
 					</tr>
 				</thead>

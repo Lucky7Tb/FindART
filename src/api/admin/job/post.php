@@ -25,11 +25,11 @@ if (!$photo['success']) {
 
 $photoPath = $app['src']['image'] . 'dist/' . $photo['fileName'];
 $photoId = save("
-	INSERT INTO photos (`photo_url`, `created_at`, `updated_at`)
+	INSERT INTO `photos` (`photo_url`, `created_at`, `updated_at`)
 	VALUES('$photoPath', '$createdAt', '$updatedAt');
 ");
 $jobVacancyId = save("
-	INSERT INTO job_vacancy (`art_finder_id`, `photo_id`, `job_description`, `job_payment`, `job_due_date`, `is_visible`, `created_at`, `updated_at`)
+	INSERT INTO `job_vacancy` (`art_finder_id`, `photo_id`, `job_description`, `job_payment`, `job_due_date`, `is_visible`, `created_at`, `updated_at`)
 	VALUES ('$artFinderId', '$photoId', '$jobDescription', '$jobPayment', '$jobDueDate', '$isVisible', '$createdAt', '$updatedAt')
 "
 );

@@ -199,3 +199,22 @@ form div {
 .primary-button:hover, .primary-button-lg:hover{
 	cursor: pointer;
 }	
+
+table {
+	width: 100%;
+}
+
+table th {
+	background-color: var(--primary-color);
+	color: var(--white);
+}
+
+table td {
+	background-color: var(--white);
+}
+
+table, th, td {
+	border: 0.5px solid #1b1212;
+	border-collapse: collapse;
+	padding: 10px;
+}

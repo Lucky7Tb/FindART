@@ -10,8 +10,8 @@ $createdAt = getTodayDate();
 $updatedAt = getTodayDate();
 
 $query = "
-	SELECT job_status FROM art
-	WHERE id = '$artId';
+	SELECT `job_status` FROM `art`
+	WHERE `id` = '$artId';
 ";
 
 $data = select($query);
@@ -23,9 +23,9 @@ if ($jobStatus == "1") {
 }
 
 $query = "
-	UPDATE art_interested_job 
-	SET job_status = IF(art_id != $artId, 1, 2), updated_at = '$updatedAt'
-	WHERE job_vacancy_id = '$jobId'
+	UPDATE `art_interested_job` 
+	SET `job_status` = IF(art_id != $artId, 1, 2), `updated_at` = '$updatedAt'
+	WHERE `job_vacancy_id` = '$jobId'
 ";
 
 $isUpdated = save($query);

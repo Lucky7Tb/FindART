@@ -24,7 +24,7 @@ require $app['template'] . 'admin/header.php';
 
 				<div class="inner-form">
 					<label for="job-payment">Gaji</label>
-					<input type="number" name="job_payment" id="job_payment" min="500000" value="500000" step="500000" required>
+					<input type="number" name="job_payment" id="job_payment" min="500000" required>
 				</div>
 
 				<div class="inner-form">

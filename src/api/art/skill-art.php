@@ -8,7 +8,7 @@ $app = config();
 $artId = $_GET['id'];
 
 $query = "
-	SELECT art_skill.skill AS art_skill FROM art_skill WHERE art_skill.art_id = '$artId'
+	SELECT `art_skill`.`skill` AS `art_skill` FROM `art_skill` WHERE `art_skill`.`art_id` = '$artId'
 ";
 
 $data = select($query);

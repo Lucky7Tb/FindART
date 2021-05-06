@@ -6,10 +6,10 @@ require __DIR__ . '/../../helpers/query.php';
 $username = $_POST['username'];
 $password = $_POST['password'];
 $user = select("
-	SELECT users.id, users.username, users.password, users.contact_number, users.photo_id, users.address, users.role, users.province_id, users.city_id, users.district_id, users.sub_district_id, photos.photo_url AS photo
-	FROM users
-	JOIN photos ON users.photo_id = photos.id
-	WHERE username = '$username'
+	SELECT `users`.`id`, `users`.`username`, `users`.`password`, `users`.`contact_number`, `users`.`photo_id`, `users`.`address`, `users`.`role`, `users`.`province_id`, `users`.`city_id`, `users`.`district_id`, `users`.`sub_district_id`, `photos`.`photo_url` AS photo
+	FROM `users`
+	JOIN `photos` ON `users`.`photo_id` = `photos`.`id`
+	WHERE `username` = '$username'
 ");
 
 if(count($user) > 0) { 

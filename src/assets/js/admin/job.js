@@ -10,7 +10,7 @@ function getJob() {
 			let contentData = "";
 
 			if(response.data.length === 0) {
-				contentData = "<td colspan='4'><strong>Tidak ada data</strong></td>";
+				contentData = "<td colspan='5'><strong>Tidak ada data</strong></td>";
 				dataBody.innerHTML = contentData;
 			}else {
 				response.data.forEach((data) => {
@@ -23,6 +23,7 @@ function getJob() {
 						</td>
 						<td>${data.job_payment}</td>
 						<td>${data.job_due_date}</td>
+						<td>${data.updated_at}</td>
 						<td style='padding: 15px'>
 							<a class='info-button' href='${baseUrl}/src/view/admin/job/detail.php?id=${data.id}'>Detail</a>
 							<a class='warning-button' style='margin-left: 10px;' href='${baseUrl}/src/view/admin/job/update.php?id=${data.id}'>Ubah</a>

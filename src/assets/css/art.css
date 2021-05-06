@@ -1,11 +1,13 @@
+@import url('./variabel.css');
+
 form {
     display: block;
     margin-bottom: 20px;
 }
 
 form select {
-    background: #FFFFFF;
-    border: 1px solid #000000;
+    background: var(--white);
+    border: 1px solid var(--black);
     box-sizing: border-box;
     border-radius: 10px;
     width: 505px;
@@ -15,18 +17,18 @@ form select {
 
 form #cari {
     background-image: url("../img/search.png");
-    background: #006AA8;
+    background: var(--primary-color);
     font-weight: bold;
     align-items: center;
-    color: #FFFFFF;
-    border: 2px solid #E5E5E5;
+    color: var(--white);
+    border: 2px solid var(--black);
     box-sizing: border-box;
     border-radius: 5px;
     padding: 10px;
 }
 
 .card {
-    background: #F2F0F0;
+    background: var(--gray);
     padding: 10px;
     overflow: hidden;
     margin-bottom: 30px;
@@ -42,11 +44,11 @@ form #cari {
     display: block;
     float: left;
     width: 30%;
-    margin-right: 20px;
+    margin-right: 1.5em;
 }
 
 .card-header {
-    color: #000000;
+    color: var(--black);
     font-size: 30px;
     font-weight: 600;
     float: left;
@@ -55,7 +57,7 @@ form #cari {
 }
 
 .user {
-    color: #1E435F;
+    color: var(--primary-color);
     font-weight: 600;
     font-size: 20px;
     padding: 0 0 30px 0;
@@ -63,17 +65,17 @@ form #cari {
 
 .location {
     display: inline;
-    color: #3F3C3C;
+    color: var(--black);
     font-weight: 500;
 }
 
 .link {
     display: inline-block;
     float: right;
-    color: #000000;
+    color: var(--white);
     text-decoration: none;
     font-weight: 600;
-    background: #C4C4C4;
+    background: var(--primary-color);
     border-radius: 5px;
     padding: 10px 30px;
     margin-top: 110px;
@@ -93,12 +95,12 @@ form #cari {
 }
 
 .detail-left h1 {
-    color: #081C2B;
+    color: var(--black);
     margin: 15px 0;
 }
 
 .finder {
-    background: #E5E5E5;
+    background: var(--white);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -118,10 +120,31 @@ form #cari {
     display: flex;
     justify-content: center;
     text-decoration: none;
-    background: #006AA8;
-    color: #ECF8FF;
+    background: var(--primary-color);
+    color: var(--white);
     font-weight: 600;
     border-radius: 3px;
     padding: 15px 0px;
     margin: 30px 450px;
+}
+
+.pending-badge {
+	padding: 5px;
+	border-radius: 10px;
+	background-color: var(--warning-color);
+	color: var(--white);
+}
+
+.reject-badge {
+	padding: 5px;
+	border-radius: 10px;
+	background-color: var(--danger-color);
+	color: var(--white);
+}
+
+.accept-badge {
+	padding: 5px;
+	border-radius: 10px;
+	background-color: var(--primary-color);
+	color: var(--white);
 }
