@@ -9,7 +9,7 @@ require $app['template'] . 'admin/header.php';
 	<?php require $app['template'] . 'admin/navbar.php'; ?>
 
 	<div class="col-12" style="margin-top: 2em;">
-		<a href="./job/create.php" class="primary-button">
+		<a href="./job/create-job.php" class="primary-button">
 			<img src="<?= $app['src']['image'] . 'icon/plus.svg' ?>" alt="plus">
 			Tambah lowongan
 		</a>
@@ -35,7 +35,7 @@ require $app['template'] . 'admin/header.php';
 </div>
 
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>
-<script src="<?= $app['src']['js'] . 'admin/job.js' ?>"></script>
+<script src="<?= $app['src']['js'] . 'admin/job/job.js' ?>"></script>
 <script>
 	getJob();
 </script>

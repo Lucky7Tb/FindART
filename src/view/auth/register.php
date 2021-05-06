@@ -73,6 +73,6 @@
 
 	</div>
 	<script src="../../assets/js/app.js"></script>
-	<script src="../../assets/js/register.js"></script>
+	<script src="../../assets/js/auth/register.js"></script>
 </body>
 </html>

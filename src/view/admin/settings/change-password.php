@@ -32,5 +32,5 @@ require $app['template'] . 'admin/header.php';
 </div>
 
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>
-<script src="<?= $app['src']['js'] . 'admin/change-password.js' ?>"></script>
+<script src="<?= $app['src']['js'] . 'admin/settings/change-password.js' ?>"></script>
 <?php require $app['template'] . 'admin/footer.php' ?>

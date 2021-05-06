@@ -12,7 +12,7 @@ require $app['template'] . 'admin/header.php';
 		<div class="col-12">
 			<img src="<?= $_SESSION['user']['photo'] ?>" class="d-block mx-auto" alt="Avatar" width="10%">
 
-			<form action="post" id="form-setting">
+			<form id="form-setting">
 				<div class="file-upload col-12">
 					<label for="profile_photo">Foto profile</label>
 					<input type="file" name="profile_photo" id="profile_photo">
@@ -61,7 +61,7 @@ require $app['template'] . 'admin/header.php';
 </div>
 
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>
-<script src="<?= $app['src']['js'] . 'admin/settings.js' ?>"></script>
+<script src="<?= $app['src']['js'] . 'admin/settings/setting.js' ?>"></script>
 <script>
 	function getProvinsi() {
 		fetch(`${baseUrl}/src/api/location/getProvince.php`, {

@@ -12,7 +12,7 @@ checkUser();
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Landing Page FindART</title>
-	<link href="src/assets/css/landing.css" rel="stylesheet" type="text/css">
+	<link href="./src/assets/css/landing.css" rel="stylesheet" type="text/css">
 	<link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 
@@ -33,12 +33,12 @@ checkUser();
 
 		</div>
 		<div class="content-right">
-			<img src="src/assets/img/cleaning-service.png" alt="cleaning-service.png">
+			<img src="./src/assets/img/cleaning-service.png" alt="cleaning-service.png">
 		</div>
 	</div>
 
 	<footer>
-		<p>Copyright FindART. 2021 Made With Love</p>
+		<p>&copy; FindART 2021. Made With &#10084;</p>
 	</footer>
 </body>
 

@@ -89,10 +89,6 @@ window.addEventListener('load', function () {
 			});
 	});
 
-	changePasswordBtn.addEventListener('click', function () {
-		window.location.href = `${baseUrl}/src/view/admin/settings/change-password.php`;
-	});
-
 	formSetting.addEventListener('submit', function (e) {
 		e.preventDefault();
 		
@@ -114,5 +110,9 @@ window.addEventListener('load', function () {
 			.catch(function (err) {
 				alert(err.message);
 			})
+	});
+
+	changePasswordBtn.addEventListener('click', function () {
+		window.location.href = `${baseUrl}/src/view/admin/settings/change-password.php`;
 	});
 });

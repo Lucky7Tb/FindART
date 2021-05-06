@@ -15,6 +15,6 @@ require $app['template'] . 'admin/header.php';
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>
 <script src="<?= $app['src']['js'] . 'admin/art/art.js' ?>"></script>
 <script>
-	getMyART();
+	getDetailART(<?= $_GET['id'] ?>);
 </script>
 <?php require $app['template'] . 'admin/footer.php' ?>

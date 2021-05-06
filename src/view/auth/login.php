@@ -12,14 +12,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login</title>
 	<link href="../../assets/css/login.css" rel="stylesheet" type="text/css">
+	<!-- <link href="../../assets/css/login.css" rel="stylesheet" type="text/css"> -->
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
 	<div class="container">
-		<img src="../../assets/img/findart_logo.png" alt="logo.png">
-		<h1>FindART</h1>
+		<img src="../../assets/img/findart_logo_2.png" alt="logo.png">
 
 		<div class="form">
 			<form action="post" id="form-login">
@@ -34,7 +34,8 @@
 
 	</div>
 
-	<script src="../../assets/js/login.js"></script>
+	<script src="../../assets/js/app.js"></script>
+	<script src="../../assets/js/auth/login.js"></script>
 </body>
 
 </html>

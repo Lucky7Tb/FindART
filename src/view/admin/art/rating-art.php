@@ -23,7 +23,7 @@ require $app['template'] . 'admin/header.php';
 </div>
 
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>
-<script src="<?= $app['src']['js'] . 'admin/job.js' ?>"></script>
+<script src="<?= $app['src']['js'] . 'admin/art/art.js' ?>"></script>
 <script>
 	const formRating = document.getElementById('form-rating');
 	const rating = document.getElementById('rating');
@@ -36,12 +36,7 @@ require $app['template'] . 'admin/header.php';
 		formData.append('job_accepted_id', <?= $_GET['id'] ?>);
 		formData.append('rating', rating.value);
 
-		fireART(formData)
-			.then(function (response) {
-				if (response.code == 200) {
-					window.location.href = "index.php";
-				}
-			})
+		fireART(formData);
 	})
 </script>
 <?php require $app['template'] . 'admin/footer.php' ?>

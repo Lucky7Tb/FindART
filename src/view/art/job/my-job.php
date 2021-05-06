@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . '/../../config/app.php';
-require __DIR__ . '/../../helpers/helpers.php';
+require __DIR__ . '/../../../config/app.php';
+require __DIR__ . '/../../../helpers/helpers.php';
 $app = config();
 require $app['template'] . 'art/header.php';
 ?>
@@ -32,7 +32,7 @@ require $app['template'] . 'art/header.php';
 </div>
 
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>
-<script src="<?= $app['src']['js'] . 'art/my-job.js' ?>"></script>
+<script src="<?= $app['src']['js'] . 'art/job/my-job.js' ?>"></script>
 <script>
 	getMyJob();
 </script>

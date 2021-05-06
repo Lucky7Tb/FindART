@@ -10,7 +10,7 @@ formLogin.addEventListener('submit', function(e) {
   data.append("username", username.value);
   data.append("password", password.value);
 
-  fetch("http://localhost/findart/src/api/auth/login.php", {
+  fetch(`${baseUrl}/src/api/auth/login.php`, {
     method: "POST",
     body: data,
   })
@@ -24,10 +24,10 @@ formLogin.addEventListener('submit', function(e) {
 
       switch (response.data.role) {
         case "0":
-          window.location.href = "http://localhost/findart/src/view/admin/index.php";
+          window.location.href = `${baseUrl}/src/view/admin/index.php`;
           break;
         case "1":
-          window.location.href = "http://localhost/findart/src/view/art/index.php";
+          window.location.href = `${baseUrl}/src/view/art/index.php`;
           break;
       }
     })

@@ -13,8 +13,18 @@ require $app['template'] . 'admin/header.php';
 </div>
 
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>
-<script src="<?= $app['src']['js'] . 'admin/art/art.js' ?>"></script>
+<script src="<?= $app['src']['js'] . 'admin/job/job.js' ?>"></script>
 <script>
-	getMyART();
+	getInterestedART(<?= $_GET['id'] ?>);
+
+	function confirmSelectART(artId) {
+		const willSelected = confirm("Yakin ingin memilih ART ini?");
+		if (willSelected) {
+			const formData = new FormData;
+			formData.append('art_id', artId);
+			formData.append('job_id', <?= $_GET['id'] ?>);
+			chooseART(formData);
+		}
+	}
 </script>
 <?php require $app['template'] . 'admin/footer.php' ?>

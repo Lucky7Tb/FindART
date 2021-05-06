@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . '/../../config/app.php';
-require __DIR__ . '/../../helpers/helpers.php';
+require __DIR__ . '/../../../config/app.php';
+require __DIR__ . '/../../../helpers/helpers.php';
 $app = config();
 require $app['template'] . 'art/header.php';
 ?>
@@ -9,13 +9,12 @@ require $app['template'] . 'art/header.php';
 
 	<?php require $app['template'] . 'art/navbar.php'; ?>
 
-	<div id="content">
-		
-	</div>
+	<div id="content"></div>
+	
 	<a class="apply-button" href="javascript:void(0)" onclick='applyJob()'>Apply</a>
 </div>
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>
-<script src="<?= $app['src']['js']. 'art/menu.js' ?>"></script>
+<script src="<?= $app['src']['js']. 'art/job/job-detail.js' ?>"></script>
 <script>
 	getDetail(<?= $_GET['id'] ?>)
 		.then(function (response) {
@@ -30,10 +29,6 @@ require $app['template'] . 'art/header.php';
 							<p style="font-weight: bold; font-size: 20px;">GAJI: Rp. ${data.job_payment}</p>
 							<h1>Rumah ${data.finder}</h1>
 							<p style="font-weight: 500; color: #000000; font-size: 17px; margin-bottom: 15px;">${data.address}</p>
-							<div class="col-6 finder">
-								<img src="../../assets/img/avatar.png" alt="avatar">
-								<p style="font-weight: 600; font-size: 20px; padding: 20px 0 5px 0;">${data.finder}</p><br>
-							</div>
 						</div>
 						<div class="detail-right">
 							<p style="font-weight: 600;">DESKRIPSI</p>
@@ -70,7 +65,7 @@ require $app['template'] . 'art/header.php';
 				window.location.href = baseUrl + "/src/view/art/";
 			})
 			.catch(function (err) {
-				alert(err);
+				alert(err.message);
 			});
 		}
 	}

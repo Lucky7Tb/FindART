@@ -1,5 +1,5 @@
 function getMyJob() {
-	fetch(`${baseUrl}/src/api/art/get-my-job.php`, {
+	fetch(`${baseUrl}/src/api/art/job/get-my-job.php`, {
 		method: 'GET'
 	})
 	.then(function (response) {
