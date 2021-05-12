@@ -4,7 +4,7 @@ formChangePassword.addEventListener('submit', function (e) {
 	e.preventDefault();
 	const formData = new FormData(this);
 
-	fetch(`${baseUrl}/src/api/admin/settings/change-password.php`, {
+	fetch(`${baseUrl}/src/api/art/settings/change-password.php`, {
 		method: 'POST',
 		body: formData
 	})
@@ -16,9 +16,8 @@ formChangePassword.addEventListener('submit', function (e) {
 				throw new Error(response.message)
 			} else {
 				alert(response.message);
-				window.location.href = `${baseUrl}/src/view/admin/settings`;
+				window.location.href = `${baseUrl}/src/view/art/settings`;
 			}
-
 		})
 		.catch(function (error) {
 			alert(error.message);

@@ -94,7 +94,7 @@ window.addEventListener('load', function () {
 		
 		const formData = new FormData(this);
 
-		fetch(`${baseUrl}/src/api/admin/settings/change-settings.php`, {
+		fetch(`${baseUrl}/src/api/art/settings/change-settings.php`, {
 			method: 'POST',
 			body: formData
 		})
@@ -114,6 +114,6 @@ window.addEventListener('load', function () {
 	});
 
 	changePasswordBtn.addEventListener('click', function () {
-		window.location.href = `${baseUrl}/src/view/admin/settings/change-password.php`;
+		window.location.href = `${baseUrl}/src/view/art/settings/change-password.php`;
 	});
 });

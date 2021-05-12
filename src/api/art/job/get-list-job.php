@@ -1,8 +1,8 @@
 <?php 
 
-require __DIR__ . '/../../config/app.php';
-require __DIR__ . '/../../helpers/helpers.php';
-require __DIR__ . '/../../helpers/query.php';
+require __DIR__ . '/../../../config/app.php';
+require __DIR__ . '/../../../helpers/helpers.php';
+require __DIR__ . '/../../../helpers/query.php';
 
 if (isset($_GET["provinsi"]) && isset($_GET["kota"])) {
   $idProvinsi = $_GET["provinsi"];

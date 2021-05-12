@@ -12,24 +12,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login</title>
 	<link href="../../assets/css/login.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/style.css" rel="stylesheet" type="text/css">
 	<!-- <link href="../../assets/css/login.css" rel="stylesheet" type="text/css"> -->
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
-	<div class="container">
-		<img src="../../assets/img/findart_logo_2.png" alt="logo.png">
+	<div class="container-login">
+		<a href="../../../index.php">
+			<img src="../../assets/img/findart_logo_2.png" alt="logo.png">			
+		</a>
 
 		<div class="form">
 			<form action="post" id="form-login">
-				<label for="username">Username</label><br>
-				<input type="text" name="username" id="username" autocomplete="off" required><br>
-				<label for="password">Password</label><br>
-				<input type="password" name="password" id="password" required><br>
-				<button id="btn-login" type="submit" name="login">Login</button>
+				<div class="inner-form">
+					<label for="username">Username</label><br>
+					<input type="text" name="username" id="username" autocomplete="off" autofocus required>
+				</div>
+				<div class="inner-form">
+					<label for="password">Password</label><br>
+					<input type="password" name="password" id="password" required>
+				</div>
+				<br>
+				<button type="submit" class="primary-button-lg" name="login">Login</button>
 			</form>
-			<a href="register.php">Belum punya akun?</a>
+			<a href="register.php">
+				<h3>Belum punya akun?</h3>
+			</a>
 		</div>
 
 	</div>

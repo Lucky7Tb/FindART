@@ -17,6 +17,18 @@ if(count($user) > 0) {
 	if (checkPassword($password, $user[0]['password'])) {
 		unset($user[0]['password']);
 		$_SESSION['user'] = $user[0];
+		if ($user[0]['role'] == '1') {
+			$userId = $user[0]['id'];
+			$artData = select("
+				SELECT `job_status`, `art_description` 
+				FROM `art`
+				WHERE `art`.`user_id` = '$userId'
+			");
+			$jobStatus = $artData[0]['job_status'];
+			$artDescription = $artData[0]['art_description'];
+			$_SESSION['user']['job_status'] = $jobStatus;
+			$_SESSION['user']['art_description'] = $artDescription;
+		}
 
 		response(200, $user[0], 'Berhasil login');
 	}

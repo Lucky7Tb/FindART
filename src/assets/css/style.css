@@ -4,6 +4,7 @@
 	margin: 0;
   font-family: "Montserrat", sans-serif;
 	box-sizing: border-box;
+	color: var(--black)
 }
 
 .container {
@@ -58,7 +59,7 @@
 	display: block;
 }
 
-.inner-form > input, select, textarea{
+.inner-form > input, .inner-form > select, .inner-form > textarea{
 	width: 95%;
 	padding: 10px 20px;
 	margin-top: 10px;
@@ -141,6 +142,14 @@
 	cursor: pointer;
 }	
 
+.d-block {
+	display: block;
+}
+
+.mx-auto {
+	margin: 0 auto;
+}
+
 table {
 	width: 100%;
 }
@@ -167,8 +176,11 @@ footer {
 	right: 0;
 	width: 100%;
 	padding: 25px;
+	background-color: var(--primary-color);
+}
+
+footer p {
 	color: var(--white);
 	font-weight: 700;
-	background-color: var(--primary-color);
 	text-align: center;
 }

@@ -18,6 +18,7 @@ require $app['template'] . 'art/header.php';
 							<th>Pencari ART</th>
 							<th>Gaji</th>
 							<th>Tgl berakhir lowongan</th>
+							<th>Tgl perubahan</th>
 							<th>Status pekerjaan</th>
 							<th>Aksi</th>
 						</tr>

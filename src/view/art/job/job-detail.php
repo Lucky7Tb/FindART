@@ -20,25 +20,37 @@ require $app['template'] . 'art/header.php';
 		.then(function (response) {
 			const dataContent = document.getElementById('content');
 			let content = "";
-
-			response.data.forEach(data => {
-				content += `
-					<div class="card">
-						<div class="detail-left">
-							<img src="${data.thumbnail}" alt="gambar.png">
-							<p style="font-weight: bold; font-size: 20px;">GAJI: Rp. ${data.job_payment}</p>
-							<h1>Rumah ${data.finder}</h1>
-							<p style="font-weight: 500; color: #000000; font-size: 17px; margin-bottom: 15px;">${data.address}</p>
+			const data = response.data;
+			content += `
+				<div class="card">
+					<div class="detail-left">
+						<img src="${data.thumbnail}" alt="gambar.png">
+						<p style="font-weight: bold; font-size: 20px;">GAJI: Rp. ${data.job_payment}</p>
+						<h1>Rumah ${data.finder}</h1>
+						<div>
+							<p style="font-weight: 500; color: var(--black); font-size: 17px; margin-bottom: 1em">Provinsi: ${data.province_name}</p>
 						</div>
-						<div class="detail-right">
-							<p style="font-weight: 600;">DESKRIPSI</p>
-							<div>
-								${data.job_description}
-							</div>
+						<div>
+							<p style="font-weight: 500; color: var(--black); font-size: 17px; margin-bottom: 1em">Kota: ${data.city_name}</p>
+						</div>
+						<div>
+							<p style="font-weight: 500; color: var(--black); font-size: 17px; margin-bottom: 1em">Kecamatan: ${data.district_name}</p>
+						</div>
+						<div>
+							<p style="font-weight: 500; color: var(--black); font-size: 17px; margin-bottom: 1em">Kelurahan: ${data.sub_district_name}</p>
+						</div>
+						<p style="font-weight: 500; color: var(--black); font-size: 17px; margin-bottom: 1em">
+							Alamat lengkap: ${data.address}
+						</p>
+					</div>
+					<div class="detail-right">
+						<p style="font-weight: 600;">DESKRIPSI</p>
+						<div>
+							${data.job_description}
 						</div>
 					</div>
-					`
-			});
+				</div>
+			`
 			dataContent.innerHTML = content;
 		});
 	
@@ -49,7 +61,7 @@ require $app['template'] . 'art/header.php';
 			const formData = new FormData();
 			formData.append('job_vacancy_id', "<?= $_GET['id'];?>");
 
-			fetch(`${baseUrl}/src/api/art/applyJob.php`, {
+			fetch(`${baseUrl}/src/api/art/job/apply-job.php`, {
 				method: "POST",
 				body: formData,
 			})

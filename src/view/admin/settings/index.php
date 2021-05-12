@@ -20,7 +20,7 @@ require $app['template'] . 'admin/header.php';
 
 				<div class="inner-form col-12">
 					<label for="contact">No telpon</label>
-					<input type="text" name="contact" id="contact" value="<?= $_SESSION['user']['contact_number'] ?>">
+					<input type="text" name="contact" id="contact" placeholder="Isi no telpon anda"> value="<?= $_SESSION['user']['contact_number'] ?>">
 				</div>
 
 				<div class="inner-form col-12">
@@ -45,7 +45,7 @@ require $app['template'] . 'admin/header.php';
 
 				<div class="inner-form col-12">
 					<label for="address">Alamat</label>
-					<textarea name="address" id="address" cols="100" rows="10" required><?= $_SESSION['user']['address'] ?></textarea>
+					<textarea name="address" id="address" cols="100" rows="10" placeholder="Isi alamat lengkap anda" required><?= $_SESSION['user']['address'] ?></textarea>
 				</div>
 
 				<div class="col-1">

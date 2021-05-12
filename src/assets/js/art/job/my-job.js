@@ -37,10 +37,15 @@ function renderData(jobData) {
 					jobStatus = 'Diterima';
 					jobBadge = 'accept-badge';
 					action = `
-						<a class='primary-button' href="https://api.whatsapp.com/send?phone=${number}&text=Halo%20saya%20yang%20bekerja%20untuk%20anda.%20Mohon%20kerja%20samanya%20ya.">
+						<a class='primary-button chat-button' href="https://api.whatsapp.com/send?phone=${number}&text=Halo%20saya%20yang%20bekerja%20untuk%20anda.%20Mohon%20kerja%20samanya%20ya.">
 							Chat
 						</a>
 					`;
+					break;
+				case '3':
+					jobStatus = 'Sudah berhenti';
+					jobBadge = 'reject-badge';
+					action = '-';
 					break;
 			}
 			content += /*html*/ `
@@ -48,6 +53,7 @@ function renderData(jobData) {
 					<td>${data.full_name}</td>
 					<td>${data.job_payment}</td>
 					<td>${data.job_due_date}</td>
+					<td>${data.updated_at}</td>
 					<td><span class="${jobBadge}">${jobStatus}</span></td>
 					<td>${action}</td>
 				</tr>
