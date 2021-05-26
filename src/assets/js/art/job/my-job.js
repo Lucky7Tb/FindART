@@ -62,7 +62,7 @@ function renderData(jobData) {
 	} else {
 		content += /*html*/`
 			<tr>
-				<td colspan="5">Tidak ada data</td>
+				<td colspan="6">Tidak ada data</td>
 			</tr>
 		`;
 	}

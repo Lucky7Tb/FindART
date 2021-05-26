@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 03, 2021 at 03:52 PM
+-- Generation Time: May 26, 2021 at 02:39 AM
 -- Server version: 10.4.17-MariaDB-log
 -- PHP Version: 7.4.13
 
@@ -37,17 +37,6 @@ CREATE TABLE `art` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `art`
---
-
-INSERT INTO `art` (`id`, `user_id`, `full_name`, `art_description`, `job_status`, `created_at`, `updated_at`) VALUES
-(3, 18, 'Dira-art1', '', 1, '2021-04-11 23:19:41', '2021-04-11 23:19:41'),
-(4, 19, 'dira-art2', '', 0, '2021-04-11 23:21:18', '2021-04-11 23:21:18'),
-(5, 20, 'Dira-art3', '', 0, '2021-04-11 23:22:03', '2021-04-11 23:22:03'),
-(6, 22, 'dwd', NULL, 0, '2021-04-20 16:53:50', '2021-04-20 16:53:50'),
-(7, 23, 'ART4', NULL, 0, '2021-04-20 17:26:46', '2021-04-20 17:26:46');
-
 -- --------------------------------------------------------
 
 --
@@ -64,13 +53,6 @@ CREATE TABLE `art_accepted_job` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `art_accepted_job`
---
-
-INSERT INTO `art_accepted_job` (`id`, `art_id`, `art_finder_id`, `job_vacancy_id`, `job_status`, `created_at`, `updated_at`) VALUES
-(11, 3, 3, 18, 1, '2021-04-27 17:41:57', '2021-04-27 17:41:57');
-
 -- --------------------------------------------------------
 
 --
@@ -84,15 +66,6 @@ CREATE TABLE `art_finder` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `art_finder`
---
-
-INSERT INTO `art_finder` (`id`, `user_id`, `full_name`, `created_at`, `updated_at`) VALUES
-(3, 15, 'Lucky Finder ART', '2021-03-29 23:14:17', '2021-03-29 23:14:17'),
-(4, 17, 'Lucky finder art 2', '2021-04-07 00:03:39', '2021-04-07 00:03:39'),
-(5, 21, 'Lucky finder art 3', '2021-04-20 16:39:23', '2021-04-20 16:39:23');
 
 -- --------------------------------------------------------
 
@@ -109,13 +82,6 @@ CREATE TABLE `art_interested_job` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `art_interested_job`
---
-
-INSERT INTO `art_interested_job` (`id`, `art_id`, `job_vacancy_id`, `job_status`, `created_at`, `updated_at`) VALUES
-(6, 3, 18, 2, NULL, '2021-04-27 17:41:57');
-
 -- --------------------------------------------------------
 
 --
@@ -131,17 +97,6 @@ CREATE TABLE `art_rating` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `art_rating`
---
-
-INSERT INTO `art_rating` (`id`, `art_id`, `art_finder_id`, `rating`, `created_at`, `updated_at`) VALUES
-(1, 3, 3, 5, NULL, NULL),
-(2, 3, 3, 5, NULL, NULL),
-(3, 3, 3, 2, '2021-04-21 09:27:36', '2021-04-21 09:27:36'),
-(4, 3, 3, 4, '2021-04-21 09:32:58', '2021-04-21 09:32:58'),
-(5, 3, 3, 4, '2021-04-21 09:34:06', '2021-04-21 09:34:06');
-
 -- --------------------------------------------------------
 
 --
@@ -155,14 +110,6 @@ CREATE TABLE `art_skill` (
   `created_at` datetime DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `art_skill`
---
-
-INSERT INTO `art_skill` (`id`, `art_id`, `skill`, `created_at`, `updated_at`) VALUES
-(1, 3, 'Memasak', '2021-04-13 22:56:35', '2021-04-13 22:56:35'),
-(2, 3, 'Mencuci', '2021-04-13 22:56:35', '2021-04-13 22:56:35');
 
 -- --------------------------------------------------------
 
@@ -7951,14 +7898,6 @@ CREATE TABLE `job_vacancy` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `job_vacancy`
---
-
-INSERT INTO `job_vacancy` (`id`, `art_finder_id`, `photo_id`, `job_description`, `job_payment`, `job_due_date`, `is_visible`, `created_at`, `updated_at`) VALUES
-(18, 3, 25, '<h1>Deskripsi</h1><p>Berikut deskripsi kompetensinya:</p><ol><li>Bisa A</li><li>Bisa B</li><li>Bisa C</li><li>Bisa D</li><li>Bisa E</li></ol><p><br></p><ul><li>dwdwdw</li><li><br></li></ul>', '500000', '2021-04-30', 0, '2021-04-21 08:25:57', '2021-04-27 17:41:57'),
-(19, 3, 26, '<p>dwdwd</p>', '500000222', '2021-05-05', 1, '2021-04-27 20:07:40', '2021-04-27 20:07:40');
-
 -- --------------------------------------------------------
 
 --
@@ -7977,14 +7916,7 @@ CREATE TABLE `photos` (
 --
 
 INSERT INTO `photos` (`id`, `photo_url`, `created_at`, `updated_at`) VALUES
-(1, 'http://localhost/findart/src/assets/img/dist/avatar.png', '2021-03-29 23:08:10', '2021-03-29 23:08:11'),
-(19, 'http://localhost/findart/src/assets/img/dist/20210407222843KTM_Lucky.PNG', '2021-04-07 22:28:43', '2021-04-07 22:28:43'),
-(21, 'http://localhost/findart/src/assets/img/dist/20210414093725KTM_Lucky.PNG', '2021-04-14 09:37:25', '2021-04-14 09:37:25'),
-(24, 'http://localhost/findart/src/assets/img/dist/20210420212130Sertifikat_peserta_tdd-1.png', '2021-04-20 21:21:30', '2021-04-20 21:21:30'),
-(25, 'http://localhost/findart/src/assets/img/dist/20210421082557Sertifikat_peserta_tdd-1.png', '2021-04-21 08:25:57', '2021-04-21 08:25:57'),
-(26, 'http://localhost/findart/src/assets/img/dist/20210427200740Sertifikat_peserta_tdd-1.png', '2021-04-27 20:07:40', '2021-04-27 20:07:40'),
-(27, 'http://localhost/findart/src/assets/img/dist/20210501172834wp6720990-nature-art-wallpapers.jpg', '2021-05-02 00:23:30', '2021-05-02 00:28:34'),
-(28, 'http://localhost/findart/src/assets/img/dist/20210501174532Giyuu.jpg', '2021-05-02 00:45:32', '2021-05-02 00:45:32');
+(1, 'http://localhost/findart/src/assets/img/dist/avatar.png', '2021-03-29 23:08:10', '2021-03-29 23:08:11');
 
 -- --------------------------------------------------------
 
@@ -88674,20 +88606,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `province_id`, `city_id`, `district_id`, `sub_district_id`, `photo_id`, `username`, `password`, `contact_number`, `address`, `role`, `created_at`, `updated_at`) VALUES
-(15, '32', '3204', '3204260', '3204260003', 28, 'luckyfinder', '$2y$10$0uXFFnbXDg11uRS6jEElWOS1AIz/.Yfxn4TBmprVC0IVrjjZDUyPm', '8993970961', 'Bandung, kopo', 0, '2021-03-29 23:14:17', '2021-05-02 00:45:32'),
-(17, '32', '3204', '3204260', '3204260003', 1, 'luckyfinder2', '$2y$10$N6yOFZyXWgtpiD/S9iwJ2.uYpeW6qfrkNusoDN9sOMQdPMFNw/l5C', '0898989909', 'bandung', 0, '2021-04-07 00:03:39', '2021-04-07 00:03:39'),
-(18, '12', '1215', '1215050', '1215050017', 1, 'ART1', '$2y$10$iH5sw.1ZLTUvaR6eypMXEuk0onhc4oED6RIoPyelAWN4/kOriqzqm', '089565655', 'Dimana aja', 1, '2021-04-11 23:19:41', '2021-04-11 23:19:41'),
-(19, '13', '1302', '1302012', '1302012005', 1, 'ART2', '$2y$10$yAL2lZ0K3rJuHwR27jjJbeJI18YdEMBmqLPNJxG8fXJTN8iwqcO5u', '028898855', 'dimanaja', 1, '2021-04-11 23:21:18', '2021-04-11 23:21:18'),
-(20, '11', '1113', '1113020', '1113020017', 1, 'ART3', '$2y$10$5AfC1216ZdD0RMFNk8n1XuEgMdNzEUrA4HaDGzrK20wSbfxvGcuJe', '0896658789', 'DIMANAJA', 1, '2021-04-11 23:22:03', '2021-04-11 23:22:03'),
-(21, '21', '2171', '2171041', '2171041004', 1, 'luckyfinder3', '$2y$10$t.F4wR3jjiE0QqlXgNfBjuokTXgxeni0X8OH/KiESGDC8AyhyDjk2', '089918900', 'dwdwdwdw', 0, '2021-04-20 16:39:23', '2021-04-20 16:39:23'),
-(22, '33', '3318', '3318160', '3318160001', 1, 'dwdw', '$2y$10$Qpe3wfMkhGtIUbIboTh4dORifBZLzfw3jD/IrIpEtAFSLQjML/f9.', 'wdwd', 'dwdw', 1, '2021-04-20 16:53:50', '2021-04-20 16:53:50'),
-(23, '52', '5206', '5206030', '5206030007', 1, 'art', '$2y$10$J29AF1wgOI34AD2YXoO.7e1zJRXFK04KzP2QXfgMhbFDhkuspeoza', '2023232', 'DDWW', 1, '2021-04-20 17:26:46', '2021-04-20 17:26:46');
-
---
 -- Indexes for dumped tables
 --
 
@@ -88798,13 +88716,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `art`
 --
 ALTER TABLE `art`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `art_accepted_job`
 --
 ALTER TABLE `art_accepted_job`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `art_finder`
@@ -88816,37 +88734,37 @@ ALTER TABLE `art_finder`
 -- AUTO_INCREMENT for table `art_interested_job`
 --
 ALTER TABLE `art_interested_job`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `art_rating`
 --
 ALTER TABLE `art_rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `art_skill`
 --
 ALTER TABLE `art_skill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `job_vacancy`
 --
 ALTER TABLE `job_vacancy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Constraints for dumped tables
