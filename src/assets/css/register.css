@@ -1,56 +1,20 @@
 @import 'variabel.css';
 
-.container-register {
-	padding-left: 20em;
-	padding-right: 20em;
+body {
+	background-image: url("../img/background.png");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
-.form-control {
-	margin: 40px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	background: #f2f0f0;
+.form-container {
+	padding: 35px;
+	width: 50%;
+	background: var(--white);
 	mix-blend-mode: normal;
 	border-radius: 15px;
 }
 
-.form-control h2 {
-	font-weight: bold;
-	font-size: 30px;
-	text-align: center;
-}
-
-.inner-form {
-	margin: 20px;
-	padding: 30px 0 20px 20px;
-	background: #f5fafd;
-}
-
-.select {
-	width: 95%;
-	padding: 10px 20px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-	background: #ffffff;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	box-sizing: border-box;
-	font-size: 15px;
-	font-weight: bold;
-	border: 0;
-	border-radius: 10px;
-}
-
-#btn-register {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-form a {
+.form-container a{
+	color: var(--black);
 	text-decoration: none;
-	font-weight: bold;
-	color: var(--white);
-	display: block;
-	text-align: center;
-	margin-top: 2em;
 }

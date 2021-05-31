@@ -20,7 +20,7 @@ require $app['template'] . 'admin/header.php';
 
 				<div class="inner-form col-12">
 					<label for="contact">No telpon</label>
-					<input type="text" name="contact" id="contact" placeholder="Isi no telpon anda"> value="<?= $_SESSION['user']['contact_number'] ?>">
+					<input type="text" name="contact" id="contact" placeholder="Isi no telpon anda" value="<?= $_SESSION['user']['contact_number'] ?>"> 
 				</div>
 
 				<div class="inner-form col-12">
