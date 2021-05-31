@@ -5,11 +5,10 @@ $app = config();
 require $app['template'] . 'admin/header.php';
 ?>
 
+<?php require $app['template'] . 'admin/navbar.php'; ?>
+
 <div class="container">
-	<?php require $app['template'] . 'admin/navbar.php'; ?>
-
-	<div class="row" id="art-container"></div>
-
+	<div id="art-container"></div>
 </div>
 
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>

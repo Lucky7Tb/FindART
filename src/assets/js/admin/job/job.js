@@ -17,7 +17,7 @@ function getJob() {
 					contentData += /*html*/ `
 					<tr>
 						<td>
-							<a href='${data.thumbnail}' target='_blank' class='button-thumbnail'>
+							<a href='${data.thumbnail}' target='_blank' class='btn btn-link'>
 								Lihat thumbnail
 							</a>
 						</td>
@@ -25,9 +25,9 @@ function getJob() {
 						<td>${data.job_due_date}</td>
 						<td>${data.updated_at}</td>
 						<td style='padding: 15px'>
-							<a class='info-button' href='${baseUrl}/src/view/admin/job/detail-job.php?id=${data.id}'>Detail</a>
-							<a class='warning-button' style='margin-left: 10px;' href='${baseUrl}/src/view/admin/job/update-job.php?id=${data.id}'>Ubah</a>
-							<a class='danger-button delete-button' style='margin-left: 10px;' href='javascript:void(0)' onclick='deleteJob("${data.id}")'>Hapus</a>
+							<a class='btn btn-info' href='${baseUrl}/src/view/admin/job/detail-job.php?id=${data.id}'>Detail</a>
+							<a class='btn btn-warning' style='margin-left: 10px;' href='${baseUrl}/src/view/admin/job/update-job.php?id=${data.id}'>Ubah</a>
+							<a class='btn btn-danger' style='margin-left: 10px;' href='javascript:void(0)' onclick='deleteJob("${data.id}")'>Hapus</a>
 						</td>
 					</tr>
 				`;
@@ -130,7 +130,7 @@ function getInterestedART(jobId) {
 			if (response.data.length === 0) {
 				artContainer.innerHTML = `<h2 class='text-center' style='margin-top: 3em'>Belum ada ART yang tertarik</h2>`;
 			} else {
-				content += `<h2 class="text-center" style="margin-top: 3em"> ART yang tertarik </h2>`;
+				// content += `<h2 class="text-center d-block" style="margin-top: 3em"> ART yang tertarik </h2>`;
 				response.data.forEach((art) => {
 					if (art.art_rating !== null) {
 						const artRating = parseInt(art.art_rating);
@@ -142,32 +142,32 @@ function getInterestedART(jobId) {
 						}
 						starRating += '</div>';
 						content += `
-							<div class="col-4">
-								<div class="card">
-									<h3 class="text-center">${art.art_name}</h3>
+							<div class="col">
+								<div class="card h-100">
 									<a href="${baseUrl}/src/view/admin/art/detail-art.php?id=${art.art_id}">
-										<img src="${art.art_photo}" class="d-block mx-auto" alt="Avatar" width="25%">
+										<img src="${art.art_photo}" class="img-fluid card-img-top d-block mx-auto" alt="Avatar" width="25%">
 									</a>
-									<h4 class="text-center">Rating: </h4>
-									${starRating}
-									<div style="margin-left: 40%; margin-top: 1.5em">
-										<button class="primary-button" onclick='confirmSelectART(${art.art_id})'>Pilih ART</button>
+									<div class="card-body">
+										<h4 class="text-center card-title">${art.art_name}</h4>
+										<h5 class="text-center">Rating: </h5>
+										${starRating}
+										<button class="btn btn-primary d-block mx-auto mt-3" onclick='confirmSelectART(${art.art_id})'>Pilih ART</button>
 									</div>
 								</div>
 							</div>
 						`;
 					} else {
 						content += `
-							<div class="col-4">
-								<div class="card">
-									<h3 class="text-center">${art.art_name}</h3>
+							<div class="col">
+								<div class="card h-100">
 									<a href="${baseUrl}/src/view/admin/art/detail-art.php?id=${art.art_id}">
-										<img src="${art.art_photo}" class="d-block mx-auto" alt="Avatar" width="25%">
-									</a>								
-									<h4 class="text-center">Rating: </h4>
-									<h4 class="text-center">Belum ada rating</h4>
-									<div style="margin-left: 40%; margin-top: 1.5em">
-										<button data-art-id='${art.art_id}' class="primary-button" onclick='confirmSelectART(${art.art_id})'>Pilih ART</button>
+										<img src="${art.art_photo}" class="img-fluid card-img-top d-block mx-auto" alt="Avatar" width="25%">
+									</a>
+									<div class="card-body">
+										<h4 class="text-center card-title">${art.art_name}</h4>
+										<h5 class="text-center">Rating: </h5>
+										<h5 class="text-center">Belum ada rating</h5>
+										<button data-art-id='${art.art_id}' class="btn btn-primary d-block mx-auto mt-3" onclick='confirmSelectART(${art.art_id})'>Pilih ART</button>
 									</div>
 								</div>
 							</div>

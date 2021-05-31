@@ -5,33 +5,32 @@ $app = config();
 require $app['template'] . 'admin/header.php';
 ?>
 
-<div class="container">
-	<?php require $app['template'] . 'admin/navbar.php'; ?>
+<?php require $app['template'] . 'admin/navbar.php'; ?>
 
+<div class="container mt-3 mb-3">
 	<h3>Tambah pekerjaan</h3>
 
 	<div class="row">
 		<div class="col-12">
 			<form id="form-job">
-				<div class="file-upload">
+				<div class="form-group">
 					<label for="job-thumbnail">Thumbnail</label>
-					<input type="file" name="job_thumbnail" id="job_thumbnail" required>
+					<input type="file" name="job_thumbnail" class="form-control" id="job_thumbnail" required>
 				</div>
 
-				<div class="inner-form">
+				<div class="form-group mt-2">
 					<label for="job-payment">Gaji</label>
-					<input type="number" name="job_payment" id="job_payment" min="500000" required>
+					<input type="number" name="job_payment" class="form-control" id="job_payment" placeholder="Masukan gaji" min="500000" required>
 				</div>
 
-				<div class="inner-form">
+				<div class="form-group mt-2 mb-3">
 					<label for="job-duedate">Tanggal berakhir lowongan</label>
-					<input type="date" name="job_duedate" id="job_duedate" pattern="\d{4}-\d{2}-\d{2}" required>
+					<input type="date" name="job_duedate" class="form-control" id="job_duedate" pattern="\d{4}-\d{2}-\d{2}" required>
 				</div>
 
-				
 				<div id="editor" style="height: 300px;"></div>
 
-				<button type="submit" class="primary-button-lg" style="margin-top: 3em;">Save</button>
+				<button type="submit" class="btn btn-primary mt-2 mb-5">Save</button>
 			</form>
 		</div>
 	</div>

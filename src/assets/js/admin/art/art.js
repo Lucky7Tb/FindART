@@ -10,27 +10,26 @@ function getMyART() {
 			let content = '';
 
 			if (response.data.length === 0) {
-				artContainer.innerHTML = `<h2 class='text-center' style='margin-top: 3em'>Belum ada ART</h2>`;
+				artContainer.innerHTML = `<h2>Belum ada ART</h2>`;
 			} else {
 				response.data.forEach((art) => {
 					let number = art.art_number.split('');
 					number[0] = '62';
 					number = number.join('');
 					content += `
-						<div class="col-4">
-							<div class="card">
-								<h3 class="text-center">${art.art_name}</h3>
+						<div class="col">
+							<div class="card h-100">
 								<a href="${baseUrl}/src/view/admin/art/detail-art.php?id=${art.art_id}">
-									<img src="${art.art_photo}" class="d-block mx-auto" alt="Avatar" width="25%">
+									<img src="${art.art_photo}" class="img-fluid d-block mx-auto" alt="Avatar" width="35%">
 								</a>
-								<p class="text-center">
-								 <strong>Kontak: ${art.art_number}</strong>			
-								</p>		
-								<div style='text-align:center; margin-top: 1.5em'>
-										<a class='primary-button' href="https://api.whatsapp.com/send?phone=${number}&text=Halo%20saudara/i%20${art.art_name}%20sekarang%20anda%20bekerja%20dengan%20saya%20ya.%20Mohon%20kerjasamanya">Chat</a>
-								</div>
-								<div style="text-align:center; margin-top: 1.5em">
-									<a class="danger-button" href='${baseUrl}/src/view/admin/art/rating-art.php?art_id=${art.art_id}&id=${art.id}' onclick="return confirm('Yakin ingin memberhentikan ART ini?')">Berhentikan</a>
+								<div class="card-body">
+									<h4 class="text-center card-title">${art.art_name}</h4>
+									<p class="text-center">
+									<strong>Kontak: ${art.art_number}</strong>			
+									</p>		
+									<a class='btn btn-primary d-block mx-auto' href="https://api.whatsapp.com/send?phone=${number}&text=Halo%20saudara/i%20${art.art_name}%20sekarang%20anda%20bekerja%20dengan%20saya%20ya.%20Mohon%20kerjasamanya">Chat</a>
+
+									<a class="btn btn-danger d-block mx-auto mt-2" id="stop-art-button" data-art-id="${art.art_id}" data-id="${art.id}" data-bs-toggle="modal" data-bs-target="#stopArtModalConfirm">Berhentikan</a>
 								</div>
 							</div>
 						</div>
@@ -66,24 +65,24 @@ function getDetailART(artId) {
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<strong>Provinsi: ${art.province}</strong>
+								Provinsi: ${art.province}
 							</div>
-							<div class="col-12">
-								<strong>Kota: ${art.city}</strong>
+							<div class="col-12 mt-2">
+								Kota: ${art.city}
 							</div>
-							<div class="col-12">
-								<strong>Kecamatan: ${art.district}</strong>
+							<div class="col-12 mt-2">
+								Kecamatan: ${art.district}
 							</div>
-							<div class="col-12">
-								<strong>Kelurahan: ${art.sub_district}</strong>
+							<div class="col-12 mt-2">
+								Kelurahan: ${art.sub_district}
 							</div>
-							<div class="col-12">
-								<strong>Alamat: ${art.address}</strong>
+							<div class="col-12 mt-2">
+								Alamat: ${art.address}
 							</div>
-							<div class="col-12">
-								<strong>Deskripsi: ${art.art_description ? art.art_description : '-'}</strong>
+							<div class="col-12 mt-2">
+								Deskripsi: ${art.art_description ? art.art_description : '-'}
 							</div>
-							<div class="col-12" id="skill-container">
+							<div class="col-12 mt-2" id="skill-container">
 							</div>
 						</div>
 					</div>
@@ -111,9 +110,9 @@ function getSkillART(artId) {
 			const skillContainer = document.getElementById('skill-container');
 
 			if (response.data.length === 0) {
-				skillContainer.innerHTML = '<strong>Skill: - </strong>';
+				skillContainer.innerHTML = 'Skill: - ';
 			} else {
-				let content = '<strong>Skill: ';
+				let content = 'Skill: ';
 				for (let i = 0; i < response.data.length; i++) {
 					if (i == response.data.length - 1) {
 						content += response.data[i].art_skill + '.';
@@ -121,10 +120,14 @@ function getSkillART(artId) {
 						content += response.data[i].art_skill + ', ';
 					}
 				}
-				content += '</strong>';
 				skillContainer.innerHTML = content;
 			}
 		});
+}
+
+function toArtRating() {
+	const stopArtButton = document.getElementById('stop-art-button');
+	window.location.href = `${baseUrl}/src/view/admin/art/rating-art.php?id=${stopArtButton.dataset.id}&art_id=${stopArtButton.dataset.artId}`;
 }
 
 function fireART(formData) {

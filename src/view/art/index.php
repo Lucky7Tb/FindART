@@ -5,10 +5,10 @@ $app = config();
 require $app['template'] . 'art/header.php';
 ?>
 
+<?php require $app['template'] . 'art/navbar.php' ?>
+
+
 <div class="container">
-
-	<?php require $app['template'] . 'art/navbar.php' ?>
-
 	<form id="form-cari">
 		<select name="provinsi" id="provinsi" placeholder="Provinsi">
 			<option value="" disabled selected hidden>Provinsi</option>

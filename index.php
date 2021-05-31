@@ -12,9 +12,10 @@ checkUser();
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Landing Page FindART</title>
+	<link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+	<link href="./src/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="./src/assets/css/style.css" rel="stylesheet" type="text/css">
 	<link href="./src/assets/css/landing.css" rel="stylesheet" type="text/css">
-	<link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -29,8 +30,8 @@ checkUser();
 				<h1>FindART</h1>
 				<p>Tempat Mencari</p>
 				<p style="margin-bottom: 30px;">Asisten Terbaik Untuk Anda</p>
-				<a href="./src/view/auth/register.php" class="register-button">Get Started</a><br>
-				<a href="./src/view/auth/login.php" class="login-button">Login</a>
+				<a href="./src/view/auth/register.php" class="btn btn-primary btn-lg mb-3 d-block">Get Started</a>
+				<a href="./src/view/auth/login.php" class="btn btn-outline-primary btn-lg d-block">Login</a>
 	
 			</div>
 			<div class="content-right">
@@ -39,7 +40,7 @@ checkUser();
 		</div>
 	</div>
 
-	<footer>
+	<footer class="fixed-bottom">
 		<p>&copy; FindART 2021. Made With &#10084;</p>
 	</footer>
 </body>

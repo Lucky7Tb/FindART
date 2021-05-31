@@ -5,21 +5,19 @@ $app = config();
 require $app['template'] . 'admin/header.php';
 ?>
 
-<div class="container">
-	<?php require $app['template'] . 'admin/navbar.php'; ?>
-
+<?php require $app['template'] . 'admin/navbar.php'; ?>
+<div class="container mt-3">
 	<div class="row">
 		<div class="col-12">
 			<form method="post" id="form-rating">
-				<div class="inner-form">
+				<div class="form-group">
 					<label for="rating">Rating untuk ART</label>
-					<input class="inner-form" type="number" name="rating" id="rating" min="1" max="5" value="1" step="1" required>
+					<input class="form-control" type="number" name="rating" id="rating" min="1" max="5" value="1" step="1" required>
 				</div>
-				<button class="primary-button" type="submit">Submit</button>
+				<button class="btn btn-primary mt-2" type="submit">Submit</button>
 			</form>
 		</div>
 	</div>
-
 </div>
 
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>

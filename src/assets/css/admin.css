@@ -1,7 +1,0 @@
-@import url('./variabel.css');
-
-.card {
-	background-color: var(--gray);
-	border-radius: 10px;
-	padding: 2em;
-}

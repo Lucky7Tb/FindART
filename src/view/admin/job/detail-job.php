@@ -5,10 +5,11 @@ $app = config();
 require $app['template'] . 'admin/header.php';
 ?>
 
-<div class="container">
-	<?php require $app['template'] . 'admin/navbar.php'; ?>
+<?php require $app['template'] . 'admin/navbar.php'; ?>
 
-	<div class="row" id="art-container"></div>
+<div class="container mb-5">
+
+	<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-3" id="art-container"></div>
 
 </div>
 
