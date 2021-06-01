@@ -6,7 +6,7 @@ require $app['template'] . 'art/header.php';
 ?>
 
 <?php require $app['template'] . 'art/navbar.php'; ?>
-<div class="container">
+<div class="container mt-2">
 
 	<div class="row">
 		<div class="col-12">
@@ -18,13 +18,13 @@ require $app['template'] . 'art/header.php';
 					<input class="form-control" type="password" name="new_password" id="new_password" required>
 				</div>
 
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label for="confirm_password">Konfirmasi password</label>
 					<input class="form-control" type="password" name="confirm_password" id="confirm_password" required>
 				</div>
 
 				<div class="col-1">
-					<button type="submit" class="btn btn-primary">Simpan</button>
+					<button type="submit" class="btn btn-primary mt-2">Simpan</button>
 				</div>
 			</form>
 		</div>

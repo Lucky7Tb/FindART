@@ -6,7 +6,7 @@ require $app['template'] . 'art/header.php';
 ?>
 
 <?php require $app['template'] . 'art/navbar.php'; ?>
-<div class="container">
+<div class="container mt-2 mb-5">
 
 	<div class="row">
 		<div class="col-12">
@@ -24,45 +24,45 @@ require $app['template'] . 'art/header.php';
 					<input class="form-control" type="file" name="profile_photo" id="profile_photo">
 				</div>
 
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label for="address">Deskripsi anda</label>
 					<textarea class="form-control" name="description" id="description" cols="100" rows="10" placeholder="Isi deskripsi tentang diri anda sendiri" required><?= $_SESSION['user']['art_description'] ?></textarea>
 				</div>
 
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label for="contact">No telpon</label>
 					<input class="form-control" type="text" name="contact" id="contact" placeholder="Isi no telpon anda" value="<?= $_SESSION['user']['contact_number'] ?>">
 				</div>
 
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label for="provinsi">Provinsi</label>
 					<select class="form-select" type="text" name="provinsi" id="provinsi" required></select>
 				</div>
 
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label for="kota">Kota</label>
 					<select class="form-select" type="text" name="kota" id="kota" required></select>
 				</div>
 
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label for="kecamatan">Kecamatan</label>
 					<select class="form-select" type="text" name="kecamatan" id="kecamatan" required></select>
 				</div>
 
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label for="kelurahan">Kelurahan</label>
 					<select class="form-select" type="text" name="kelurahan" id="kelurahan" required></select>
 				</div>
 
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label for="address">Alamat</label>
 					<textarea class="form-control" name="address" id="address" cols="100" rows="10" placeholder="Isi alamat lengkap tempat anda tinggal" required><?= $_SESSION['user']['address'] ?></textarea>
 				</div>
 
 				
-					<button type="submit" class="btn btn-primary">Simpan</button>
+					<button type="submit" class="btn btn-primary mt-3 mb-5">Simpan</button>
 				
-					<button type="button" class="btn btn-warning" id="btn-change-password">Ubah password</button>
+					<button type="button" class="btn btn-warning mt-3 mb-5" id="btn-change-password">Ubah password</button>
 				
 			</form>
 		</div>
