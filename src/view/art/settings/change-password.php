@@ -15,17 +15,17 @@ require $app['template'] . 'art/header.php';
 			<form action="post" id="form-change-password">
 				<div class="form-group">
 					<label for="new_password">Password baru</label>
-					<input class="form-control" type="password" name="new_password" id="new_password" required>
+					<input placeholder="Masukkan Password Baru" class="form-control" type="password" name="new_password" id="new_password" required>
 				</div>
 
 				<div class="form-group mt-2">
 					<label for="confirm_password">Konfirmasi password</label>
-					<input class="form-control" type="password" name="confirm_password" id="confirm_password" required>
+					<input placeholder="Masukkan Konfirmasi Password" class="form-control" type="password" name="confirm_password" id="confirm_password" required>
 				</div>
 
-				<div class="col-1">
+				
 					<button type="submit" class="btn btn-primary mt-2">Simpan</button>
-				</div>
+				
 			</form>
 		</div>
 	</div>
