@@ -66,15 +66,23 @@ function getJob() {
 
 			response.data.forEach((data) => {
 				contentData += `
-						<div class="card">
-								<div class="left">
-										<img src="${data.thumbnail}" alt="thumbnail.jpg">
-										<p class="card-header">Rp. ${data.job_payment}</p><p style="padding: 30px;">/bulan</p>
-										<p class="user">${data.finder}</p>
-										<p class="location">${data.province}, ${data.city}</p>
+					<div class="col">
+						<div class="card mb-3 h-100">
+							<div class="row g-0">
+								<div class="col-md-4">
+									<img class="img-fluid" src="${data.thumbnail}" alt="thumbnail.jpg">
 								</div>
-								<a class="link primary-button" href="${baseUrl}/src/view/art/job/job-detail.php?id=${data.id}">Detail</a>
+								<div class="col-md-8">
+									<div class="card-body">
+										<h2 class="card-title mb-3 mt-3">Rp. ${data.job_payment} /bulan</h2>
+										<h5 class="card-text text-primary mb-3">${data.finder}</h5>
+										<h5 class="card-text">${data.province}, ${data.city}</h5>
+										<a class="btn btn-primary" href="${baseUrl}/src/view/art/job/job-detail.php?id=${data.id}">Detail</a>
+									</div>
+								</div>
+							</div>
 						</div>
+					</div>
 				`;
 			});
 			dataLowongan.innerHTML = contentData;
@@ -101,15 +109,23 @@ formCari.addEventListener('submit', function (e) {
 			if (response.data) {
 				response.data.forEach((data) => {
 					contentData += `
-							<div class="card">
-									<div class="left">
-											<img src="${data.thumbnail}" alt="thumbnail.jpg">
-											<p class="card-header">Rp. ${data.job_payment}</p><p style="padding: 30px;">/bulan</p>
-											<p class="user">${data.finder}</p>
-											<p class="location">${data.province}, ${data.city}</p>
+						<div class="col">
+							<div class="card mb-3 h-100">
+								<div class="row g-0">
+									<div class="col-md-4">
+										<img class="img-fluid" src="${data.thumbnail}" alt="thumbnail.jpg">
 									</div>
-									<a class="link primary-button" href="detail.php?id=${data.id}">Detail</a>
+									<div class="col-md-8">
+										<div class="card-body">
+											<h2 class="card-title mb-3 mt-3">Rp. ${data.job_payment} /bulan</h2>
+											<h5 class="card-text text-primary mb-3">${data.finder}</h5>
+											<h5 class="card-text">${data.province}, ${data.city}</h5>
+											<a class="btn btn-primary" href="${baseUrl}/src/view/art/job/job-detail.php?id=${data.id}">Detail</a>
+										</div>
+									</div>
+								</div>
 							</div>
+						</div>
 					`;
 				});
 			} else {

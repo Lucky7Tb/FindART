@@ -7,21 +7,22 @@ require $app['template'] . 'art/header.php';
 
 <?php require $app['template'] . 'art/navbar.php' ?>
 
-<div class="container">
-	<div id="main">
-		<div class="row">
-			<div class="col-12">
-				<div class="form-group">
-					<label for="job-status">Status pekerjaan</label>
-					<select name="job-status" id="job-status" class="form-select" onchange="getMyJob()">
-						<option value="4" selected>Semua</option>
-						<option value="0">Pending</option>
-						<option value="1">Ditolak</option>
-						<option value="2">Diterima</option>
-						<option value="3">Sudah berhenti</option>
-					</select>
-				</div>
-				<table>
+<div class="container mt-2 mb-5">
+	<div class="row">
+		<div class="col-12">
+			<div class="form-group mt-2">
+				<label for="job-status">Status pekerjaan</label>
+				<select name="job-status" id="job-status" class="form-select" onchange="getMyJob()">
+					<option value="4" selected>Semua</option>
+					<option value="0">Pending</option>
+					<option value="1">Ditolak</option>
+					<option value="2">Diterima</option>
+					<option value="3">Sudah berhenti</option>
+				</select>
+			</div>
+			<div class="table-responsive mt-2">
+				<table class="table caption-top table-bordered table-hovered text-center">
+					<caption>Daftar Pekerjaan</caption>
 					<thead>
 						<tr>
 							<th>Pencari ART</th>

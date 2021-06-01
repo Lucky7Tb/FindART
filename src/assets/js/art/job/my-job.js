@@ -39,7 +39,7 @@ function renderData(jobData) {
 					jobStatus = 'Diterima';
 					jobBadge = 'accept-badge';
 					action = `
-						<a class='primary-button chat-button' href="https://api.whatsapp.com/send?phone=${number}&text=Halo%20saya%20yang%20bekerja%20untuk%20anda.%20Mohon%20kerja%20samanya%20ya.">
+						<a class='btn btn-link' href="https://api.whatsapp.com/send?phone=${number}&text=Halo%20saya%20yang%20bekerja%20untuk%20anda.%20Mohon%20kerja%20samanya%20ya.">
 							Chat
 						</a>
 					`;
