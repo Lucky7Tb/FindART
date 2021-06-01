@@ -19,52 +19,51 @@ require $app['template'] . 'art/header.php';
 				<?php endif ?>
 			</h3>
 			<form id="form-setting">
-				<div class="file-upload col-12">
+				<div class="form-group">
 					<label for="profile_photo">Foto profile</label>
-					<input type="file" name="profile_photo" id="profile_photo">
+					<input class="form-control" type="file" name="profile_photo" id="profile_photo">
 				</div>
 
-				<div class="inner-form col-12">
+				<div class="form-group">
 					<label for="address">Deskripsi anda</label>
-					<textarea name="description" id="description" cols="100" rows="10" placeholder="Isi deskripsi tentang diri anda sendiri" required><?= $_SESSION['user']['art_description'] ?></textarea>
+					<textarea class="form-control" name="description" id="description" cols="100" rows="10" placeholder="Isi deskripsi tentang diri anda sendiri" required><?= $_SESSION['user']['art_description'] ?></textarea>
 				</div>
 
-				<div class="inner-form col-12">
+				<div class="form-group">
 					<label for="contact">No telpon</label>
-					<input type="text" name="contact" id="contact" placeholder="Isi no telpon anda" value="<?= $_SESSION['user']['contact_number'] ?>">
+					<input class="form-control" type="text" name="contact" id="contact" placeholder="Isi no telpon anda" value="<?= $_SESSION['user']['contact_number'] ?>">
 				</div>
 
-				<div class="inner-form col-12">
+				<div class="form-group">
 					<label for="provinsi">Provinsi</label>
-					<select type="text" name="provinsi" id="provinsi" required></select>
+					<select class="form-select" type="text" name="provinsi" id="provinsi" required></select>
 				</div>
 
-				<div class="inner-form col-12">
+				<div class="form-group">
 					<label for="kota">Kota</label>
-					<select type="text" name="kota" id="kota" required></select>
+					<select class="form-select" type="text" name="kota" id="kota" required></select>
 				</div>
 
-				<div class="inner-form col-12">
+				<div class="form-group">
 					<label for="kecamatan">Kecamatan</label>
-					<select type="text" name="kecamatan" id="kecamatan" required></select>
+					<select class="form-select" type="text" name="kecamatan" id="kecamatan" required></select>
 				</div>
 
-				<div class="inner-form col-12">
+				<div class="form-group">
 					<label for="kelurahan">Kelurahan</label>
-					<select type="text" name="kelurahan" id="kelurahan" required></select>
+					<select class="form-select" type="text" name="kelurahan" id="kelurahan" required></select>
 				</div>
 
-				<div class="inner-form col-12">
+				<div class="form-group">
 					<label for="address">Alamat</label>
-					<textarea name="address" id="address" cols="100" rows="10" placeholder="Isi alamat lengkap tempat anda tinggal" required><?= $_SESSION['user']['address'] ?></textarea>
+					<textarea class="form-control" name="address" id="address" cols="100" rows="10" placeholder="Isi alamat lengkap tempat anda tinggal" required><?= $_SESSION['user']['address'] ?></textarea>
 				</div>
 
-				<div class="col-1">
-					<button type="submit" class="primary-button-lg">Simpan</button>
-				</div>
-				<div class="col-1">
-					<button type="button" class="warning-button-lg" id="btn-change-password">Ubah password</button>
-				</div>
+				
+					<button type="submit" class="btn btn-primary">Simpan</button>
+				
+					<button type="button" class="btn btn-warning" id="btn-change-password">Ubah password</button>
+				
 			</form>
 		</div>
 	</div>

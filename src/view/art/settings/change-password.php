@@ -13,18 +13,18 @@ require $app['template'] . 'art/header.php';
 			<img src="<?= $_SESSION['user']['photo'] ?>" class="d-block mx-auto" alt="Avatar" width="10%">
 
 			<form action="post" id="form-change-password">
-				<div class="inner-form col-12">
+				<div class="form-group">
 					<label for="new_password">Password baru</label>
-					<input type="password" name="new_password" id="new_password" required>
+					<input class="form-control" type="password" name="new_password" id="new_password" required>
 				</div>
 
-				<div class="inner-form col-12">
+				<div class="form-group">
 					<label for="confirm_password">Konfirmasi password</label>
-					<input type="password" name="confirm_password" id="confirm_password" required>
+					<input class="form-control" type="password" name="confirm_password" id="confirm_password" required>
 				</div>
 
 				<div class="col-1">
-					<button type="submit" class="primary-button-lg">Simpan</button>
+					<button type="submit" class="btn btn-primary">Simpan</button>
 				</div>
 			</form>
 		</div>
