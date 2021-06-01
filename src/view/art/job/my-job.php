@@ -5,13 +5,22 @@ $app = config();
 require $app['template'] . 'art/header.php';
 ?>
 
+<?php require $app['template'] . 'art/navbar.php' ?>
+
 <div class="container">
-
-	<?php require $app['template'] . 'art/navbar.php' ?>
-
 	<div id="main">
 		<div class="row">
 			<div class="col-12">
+				<div class="form-group">
+					<label for="job-status">Status pekerjaan</label>
+					<select name="job-status" id="job-status" class="form-select" onchange="getMyJob()">
+						<option value="4" selected>Semua</option>
+						<option value="0">Pending</option>
+						<option value="1">Ditolak</option>
+						<option value="2">Diterima</option>
+						<option value="3">Sudah berhenti</option>
+					</select>
+				</div>
 				<table>
 					<thead>
 						<tr>

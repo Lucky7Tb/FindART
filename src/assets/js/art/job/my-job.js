@@ -1,5 +1,7 @@
 function getMyJob() {
-	fetch(`${baseUrl}/src/api/art/job/get-my-job.php`, {
+	const jobStatus = document.getElementById('job-status');
+
+	fetch(`${baseUrl}/src/api/art/job/get-my-job.php?status=${jobStatus.value}`, {
 		method: 'GET'
 	})
 	.then(function (response) {
