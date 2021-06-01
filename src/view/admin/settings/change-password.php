@@ -24,9 +24,9 @@ require $app['template'] . 'admin/header.php';
 					<input type="password" name="confirm_password" class="form-control" id="confirm_password" placeholder="Masukan konfirmasi password" required>
 				</div>
 
-				<div class="col-1">
+				
 					<button type="submit" class="btn btn-primary mt-2">Simpan</button>
-				</div>
+				
 			</form>
 		</div>
 	</div>
