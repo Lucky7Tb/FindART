@@ -11,7 +11,7 @@ require $app['template'] . 'art/header.php';
 <div class="container mt-2 mb-5">
 	<form id="form-cari">
 		<div class="row">
-			<div class="col-12 col-sm-12 col-md-5 col-lg-5 mt-3 mb-4">
+			<div class="col-12 col-sm-12 col-md-5 col-lg-5 mt-3 mb-2">
 				<div class="form-group">
 					<select class="form-select" name="provinsi" id="provinsi" placeholder="Provinsi">
 						<option value="" disabled selected hidden>Provinsi</option>
@@ -32,7 +32,7 @@ require $app['template'] . 'art/header.php';
 		</div>
 	</form>
 
-	<div id="data-lowongan" class="mt-2 row row-cols-1 g-4"></div>
+	<div id="data-lowongan" class="mt-1 row row-cols-1 g-4"></div>
 
 </div>
 
