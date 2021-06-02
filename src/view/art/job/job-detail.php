@@ -6,11 +6,9 @@ require $app['template'] . 'art/header.php';
 ?>
 
 <?php require $app['template'] . 'art/navbar.php'; ?>
-<div class="container mb-5 mt-2">
+<div class="container mt-2">
 
 	<div id="content"></div>
-	
-	<a class="btn btn-primary btn-lg mb-5 d-block mx-auto" href="javascript:void(0)" onclick='applyJob()'>Apply</a>
 </div>
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>
 <script src="<?= $app['src']['js']. 'art/job/job-detail.js' ?>"></script>
@@ -48,6 +46,11 @@ require $app['template'] . 'art/header.php';
 								<div>
 									${data.job_description}
 								</div>
+						</div>
+					</div>
+					<div class="row mt-5">
+						<div class="col-12">
+							<a class="btn btn-primary btn-lg mb-5 d-block mx-auto" href="javascript:void(0)" onclick='applyJob()'>Apply</a>
 						</div>
 					</div>
 				</div>

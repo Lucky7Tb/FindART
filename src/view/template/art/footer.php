@@ -1,4 +1,4 @@
-	<footer class="fixed-bottom mt-2">
+	<footer class="fixed-bottom">
 		<p class="footer">&copy; FindART 2021. Made With &#10084;</p>
 	</footer>
 	
