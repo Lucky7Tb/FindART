@@ -40,15 +40,6 @@ if ($password == $confirmPassword) {
 		response(400, null, 'Username sudah ada yang menggunakan');
 	}
 
-	if ($isART) {
-		foreach ($artSkill as $skill) {
-			save("
-				INSERT INTO `art_skill` (`art_id`, `skill`, `created_at`, `updated_at`)
-				VALUES ('$insertedId', '$skill', '$createdAt', '$updatedAt')
-			");
-		}
-	}
-
 	response(200, null, 'Registrasi sukses');
 	
 }else {

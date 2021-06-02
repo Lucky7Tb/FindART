@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 01, 2021 at 05:42 AM
+-- Generation Time: Jun 02, 2021 at 06:09 AM
 -- Server version: 10.4.17-MariaDB-log
 -- PHP Version: 7.4.13
 
@@ -42,11 +42,9 @@ CREATE TABLE `art` (
 --
 
 INSERT INTO `art` (`id`, `user_id`, `full_name`, `art_description`, `job_status`, `created_at`, `updated_at`) VALUES
-(1, 4, 'Imam fernandi', 'Saya bekerja dengan telaten', 0, '2021-05-30 17:03:04', '2021-05-30 17:07:53'),
-(3, 7, 'Lyck', 'Saya bekerja dengan telaten', 0, '2021-05-30 17:03:04', '2021-05-30 17:07:53'),
-(4, 9, 'lucy1', 'Saya bekerja dengan telaten', 0, '2021-05-30 17:03:04', '2021-05-30 17:07:53'),
-(5, 10, 'lucy2', 'Saya bekerja dengan telaten', 0, '2021-05-30 17:03:04', '2021-05-30 17:07:53'),
-(6, 11, 'lucy3', 'Saya bekerja dengan telaten', 0, '2021-05-30 17:03:04', '2021-05-30 17:07:53');
+(7, 13, 'Lucky Jhon Mata', 'Saya bekerja dengan telaten', 1, '2021-06-01 20:46:34', '2021-06-01 21:50:54'),
+(10, 18, 'Imam Jhon Adam', NULL, 0, '2021-06-01 21:18:53', '2021-06-01 21:18:53'),
+(11, 19, 'Amanda angel', NULL, 0, '2021-06-01 21:20:21', '2021-06-01 21:20:21');
 
 -- --------------------------------------------------------
 
@@ -69,7 +67,8 @@ CREATE TABLE `art_accepted_job` (
 --
 
 INSERT INTO `art_accepted_job` (`id`, `art_id`, `art_finder_id`, `job_vacancy_id`, `job_status`, `created_at`, `updated_at`) VALUES
-(2, 3, 4, 3, 0, '2021-06-01 00:28:18', '2021-06-01 00:28:18');
+(4, 7, 5, 6, 0, '2021-06-01 22:04:56', '2021-06-01 22:04:56'),
+(5, 7, 5, 6, 1, '2021-06-01 22:07:43', '2021-06-01 22:07:43');
 
 -- --------------------------------------------------------
 
@@ -90,7 +89,9 @@ CREATE TABLE `art_finder` (
 --
 
 INSERT INTO `art_finder` (`id`, `user_id`, `full_name`, `created_at`, `updated_at`) VALUES
-(4, 6, 'luckyfinder', '2021-05-31 23:05:48', '2021-05-31 23:05:48');
+(5, 12, 'Lucky Tri Bhakti', '2021-06-01 20:44:52', '2021-06-01 20:44:52'),
+(6, 16, 'Imam Fernandi', '2021-06-01 21:16:01', '2021-06-01 21:16:01'),
+(7, 17, 'Amanda Dwi Putri', '2021-06-01 21:16:38', '2021-06-01 21:16:38');
 
 -- --------------------------------------------------------
 
@@ -112,11 +113,11 @@ CREATE TABLE `art_interested_job` (
 --
 
 INSERT INTO `art_interested_job` (`id`, `art_id`, `job_vacancy_id`, `job_status`, `created_at`, `updated_at`) VALUES
-(2, 1, 3, 1, '2021-06-01 00:04:44', '2021-06-01 00:28:18'),
-(3, 3, 3, 3, '2021-06-01 00:04:44', '2021-06-01 00:53:47'),
-(4, 4, 3, 1, '2021-06-01 00:04:44', '2021-06-01 00:28:18'),
-(5, 5, 3, 1, '2021-06-01 00:04:44', '2021-06-01 00:28:18'),
-(8, 6, 3, 1, '2021-06-01 00:04:44', '2021-06-01 00:28:18');
+(9, 7, 6, 2, '2021-06-01 21:47:26', '2021-06-01 22:07:43'),
+(10, 7, 7, 1, '2021-06-01 21:49:42', '2021-06-01 21:49:42'),
+(11, 7, 8, 3, '2021-06-01 21:49:48', '2021-06-01 21:49:48'),
+(12, 10, 6, 1, '2021-06-01 21:52:06', '2021-06-01 22:07:43'),
+(13, 11, 6, 1, '2021-06-01 21:52:25', '2021-06-01 22:07:43');
 
 -- --------------------------------------------------------
 
@@ -138,30 +139,7 @@ CREATE TABLE `art_rating` (
 --
 
 INSERT INTO `art_rating` (`id`, `art_id`, `art_finder_id`, `rating`, `created_at`, `updated_at`) VALUES
-(2, 3, 4, 4, NULL, NULL),
-(3, 3, 4, 4, '2021-06-01 00:53:47', '2021-06-01 00:53:47');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `art_skill`
---
-
-CREATE TABLE `art_skill` (
-  `id` int(11) NOT NULL,
-  `art_id` int(11) NOT NULL,
-  `skill` varchar(255) NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp(),
-  `updated_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `art_skill`
---
-
-INSERT INTO `art_skill` (`id`, `art_id`, `skill`, `created_at`, `updated_at`) VALUES
-(1, 1, 'mencuci', '2021-05-30 17:03:04', '2021-05-30 17:03:04'),
-(2, 1, 'memasak', '2021-05-30 17:03:04', '2021-05-30 17:03:04');
+(4, 7, 5, 5, '2021-06-01 22:06:17', '2021-06-01 22:06:17');
 
 -- --------------------------------------------------------
 
@@ -7955,7 +7933,9 @@ CREATE TABLE `job_vacancy` (
 --
 
 INSERT INTO `job_vacancy` (`id`, `art_finder_id`, `photo_id`, `job_description`, `job_payment`, `job_due_date`, `is_visible`, `created_at`, `updated_at`) VALUES
-(3, 4, 6, '<p>dwdwdwd</p>', '500001', '2021-06-22', 0, '2021-05-31 23:31:04', '2021-06-01 00:28:18');
+(6, 5, 9, '<p>Butuh art dengan kemampuan:</p><p><br></p><ol><li>Bisa mencuci dengan mesin cuci</li><li>Bisa memasak makanan jepang</li><li>Bisa menggunakan vacum cleaner</li><li>Bisa menjaga bayi</li><li>Bisa memasak makanan sunda</li></ol><p><br></p><p><br></p><p>Dan akan ada tambahan bonus gaji</p>', '2500000', '2021-07-27', 0, '2021-06-01 21:08:33', '2021-06-01 22:07:43'),
+(7, 6, 11, '<p>Butuh art dengan kemampuan:</p><ol><li>Bisa mencuci dengan mesin cuci</li><li>Bisa memasak makanan jepang</li><li>Bisa menggunakan vacum cleaner</li><li>Bisa menjaga bayi</li><li>Bisa memasak makanan sunda</li></ol><p><br></p><p>Dan akan ada tambahan bonus gaji</p>', '3000000', '2021-07-29', 1, '2021-06-01 21:17:03', '2021-06-01 21:17:03'),
+(8, 7, 12, '<p>Butuh art dengan kemampuan:</p><ol><li>Bisa mencuci dengan mesin cuci</li><li>Bisa memasak makanan jepang</li><li>Bisa menggunakan vacum cleaner</li><li>Bisa menjaga bayi</li><li>Bisa memasak makanan sunda</li></ol><p><br></p><p>Dan akan ada tambahan bonus gaji</p>', '25000000', '2021-06-29', 1, '2021-06-01 21:18:00', '2021-06-01 21:18:00');
 
 -- --------------------------------------------------------
 
@@ -7979,7 +7959,13 @@ INSERT INTO `photos` (`id`, `photo_url`, `created_at`, `updated_at`) VALUES
 (3, 'http://localhost/findart/src/assets/img/dist/20210530170143sunset-1920x1080-bear-deer-8k-19715.jpg', '2021-05-30 17:01:43', '2021-05-30 17:01:43'),
 (4, 'http://localhost/findart/src/assets/img/dist/20210530100753IMG_1307.jpg', '2021-05-30 17:07:53', '2021-05-30 17:07:53'),
 (5, 'http://localhost/findart/src/assets/img/dist/20210530100954Me_Trans.jpg', '2021-05-30 17:09:54', '2021-05-30 17:09:54'),
-(6, 'http://localhost/findart/src/assets/img/dist/20210531233104sunset-1920x1080-bear-deer-8k-19715.jpg', '2021-05-31 23:31:04', '2021-05-31 23:31:04');
+(6, 'http://localhost/findart/src/assets/img/dist/20210531233104sunset-1920x1080-bear-deer-8k-19715.jpg', '2021-05-31 23:31:04', '2021-05-31 23:31:04'),
+(7, 'http://localhost/findart/src/assets/img/dist/20210601134653johann-siemens-EPy0gBJzzZU-unsplash.jpg', '2021-06-01 13:46:53', '2021-06-01 13:46:53'),
+(9, 'http://localhost/findart/src/assets/img/dist/20210601210833Robert_Masterson_House_2.jpg', '2021-06-01 21:08:33', '2021-06-01 21:08:33'),
+(10, 'http://localhost/findart/src/assets/img/dist/20210601140943IMG_1307-removebg-preview.png', '2021-06-01 21:09:43', '2021-06-01 21:09:43'),
+(11, 'http://localhost/findart/src/assets/img/dist/202106012117032407030202_7bd91d4ab1_b.jpg', '2021-06-01 21:17:03', '2021-06-01 21:17:03'),
+(12, 'http://localhost/findart/src/assets/img/dist/20210601211800greycliffe-house-tour.jpg', '2021-06-01 21:18:00', '2021-06-01 21:18:00'),
+(13, 'http://localhost/findart/src/assets/img/dist/20210601145054LuckyTriBhakti_Ilprof.png', '2021-06-01 21:50:54', '2021-06-01 21:50:54');
 
 -- --------------------------------------------------------
 
@@ -88673,12 +88659,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `province_id`, `city_id`, `district_id`, `sub_district_id`, `photo_id`, `username`, `password`, `contact_number`, `address`, `role`, `created_at`, `updated_at`) VALUES
-(4, '13', '1312', '1312050', '1312050001', 4, 'imamart', '$2y$10$XM2UpM7W6U1ODWiTSPeDTefV9kfAacKqTBWFF4ll7wF3pWapVFNHi', '899288186', 'Permata kopo barat', 1, '2021-05-30 17:03:04', '2021-05-30 17:07:53'),
-(6, '32', '3204', '3204260', '3204260003', 1, 'luckyfinder', '$2y$10$XM2UpM7W6U1ODWiTSPeDTefV9kfAacKqTBWFF4ll7wF3pWapVFNHi', '08993970968', 'Permata kopo', 0, '2021-05-31 23:05:48', '2021-05-31 23:05:48'),
-(7, '13', '1312', '1312050', '1312050001', 6, 'luckyart', '$2y$10$XM2UpM7W6U1ODWiTSPeDTefV9kfAacKqTBWFF4ll7wF3pWapVFNHi', '899288186', 'Permata kopo barat', 1, '2021-05-30 17:03:04', '2021-05-30 17:07:53'),
-(9, '13', '1312', '1312050', '1312050001', 4, 'imamart1', '$2y$10$XM2UpM7W6U1ODWiTSPeDTefV9kfAacKqTBWFF4ll7wF3pWapVFNHi', '899288186', 'Permata kopo barat', 1, '2021-05-30 17:03:04', '2021-05-30 17:07:53'),
-(10, '13', '1312', '1312050', '1312050001', 6, 'luckyart1', '$2y$10$XM2UpM7W6U1ODWiTSPeDTefV9kfAacKqTBWFF4ll7wF3pWapVFNHi', '899288186', 'Permata kopo barat', 1, '2021-05-30 17:03:04', '2021-05-30 17:07:53'),
-(11, '13', '1312', '1312050', '1312050001', 4, 'imamart2', '$2y$10$XM2UpM7W6U1ODWiTSPeDTefV9kfAacKqTBWFF4ll7wF3pWapVFNHi', '899288186', 'Permata kopo barat', 1, '2021-05-30 17:03:04', '2021-05-30 17:07:53');
+(12, '32', '3207', '3207220', '3207220004', 10, 'luckyfinder', '$2y$10$nliCeVDBBPuiGeWfY1qbt.IM15WothVnsQRj9W5NOav2Z3iUl/NNO', '08993970968', 'Jalan sesame no 14', 0, '2021-06-01 20:44:52', '2021-06-01 21:09:43'),
+(13, '32', '3204', '3204150', '3204150007', 13, 'luckyart', '$2y$10$1FZxrlNyVVMWbbv8IphWNOMxCcYPkCZcvQdStKiXBuHq180OZj.t6', '08993970968', 'Permata kopo block z-90', 1, '2021-06-01 20:46:34', '2021-06-01 21:50:54'),
+(16, '36', '3603', '3603132', '3603132003', 1, 'imamfinder', '$2y$10$0Rs1/Y4EZfrccQbMyE9QwOhHd1UQdThqXASq8q1xUw./nR17s6avy', '089837763', 'Jalan buah batu', 0, '2021-06-01 21:16:01', '2021-06-01 21:16:01'),
+(17, '75', '7504', '7504041', '7504041001', 1, 'amandafinder', '$2y$10$CARorvfSTOVhtpLKa6JmPOn4GWgPK/Ffj4t1r8ub1Y3JGVVB0XjGS', '8819927892', 'Jalan angsa no 2', 0, '2021-06-01 21:16:38', '2021-06-01 21:21:04'),
+(18, '52', '5206', '5206061', '5206061009', 1, 'imamart', '$2y$10$BZo89QH0cBK0XP1TUGmTb.mow7wEkVfX5McoDwdFVeAAwJ1yqAH8e', '0819187282', 'Jalan Sesama no 201', 1, '2021-06-01 21:18:53', '2021-06-01 21:18:53'),
+(19, '76', '7604', '7604033', '7604033013', 1, 'amandaart', '$2y$10$f9WHS3aa86pURMfLNWwt4uV5YlLVPedUMRYPRQHrJK6lr/.LAHK5.', '0899182889', 'Jalan kebangkitan raya', 1, '2021-06-01 21:20:21', '2021-06-01 21:20:21');
 
 --
 -- Indexes for dumped tables
@@ -88689,7 +88675,8 @@ INSERT INTO `users` (`id`, `province_id`, `city_id`, `district_id`, `sub_distric
 --
 ALTER TABLE `art`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `job_status` (`job_status`);
 
 --
 -- Indexes for table `art_accepted_job`
@@ -88698,7 +88685,8 @@ ALTER TABLE `art_accepted_job`
   ADD PRIMARY KEY (`id`),
   ADD KEY `art_id` (`art_id`),
   ADD KEY `art_finder_id` (`art_finder_id`),
-  ADD KEY `job_vacancy_id` (`job_vacancy_id`);
+  ADD KEY `job_vacancy_id` (`job_vacancy_id`),
+  ADD KEY `job_status` (`job_status`);
 
 --
 -- Indexes for table `art_finder`
@@ -88713,7 +88701,8 @@ ALTER TABLE `art_finder`
 ALTER TABLE `art_interested_job`
   ADD PRIMARY KEY (`id`),
   ADD KEY `art_id` (`art_id`),
-  ADD KEY `job_vacancy_id` (`job_vacancy_id`);
+  ADD KEY `job_vacancy_id` (`job_vacancy_id`),
+  ADD KEY `job_status` (`job_status`);
 
 --
 -- Indexes for table `art_rating`
@@ -88722,13 +88711,6 @@ ALTER TABLE `art_rating`
   ADD PRIMARY KEY (`id`),
   ADD KEY `art_id` (`art_id`),
   ADD KEY `art_finder_rating` (`art_finder_id`);
-
---
--- Indexes for table `art_skill`
---
-ALTER TABLE `art_skill`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `art_id` (`art_id`);
 
 --
 -- Indexes for table `cities`
@@ -88791,55 +88773,49 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `art`
 --
 ALTER TABLE `art`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `art_accepted_job`
 --
 ALTER TABLE `art_accepted_job`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `art_finder`
 --
 ALTER TABLE `art_finder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `art_interested_job`
 --
 ALTER TABLE `art_interested_job`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `art_rating`
 --
 ALTER TABLE `art_rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `art_skill`
---
-ALTER TABLE `art_skill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `job_vacancy`
 --
 ALTER TABLE `job_vacancy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
@@ -88878,12 +88854,6 @@ ALTER TABLE `art_interested_job`
 ALTER TABLE `art_rating`
   ADD CONSTRAINT `FK_ART_RATING_TO_ART` FOREIGN KEY (`art_id`) REFERENCES `art` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_ART_RATING_TO_ART_FINDER` FOREIGN KEY (`art_finder_id`) REFERENCES `art_finder` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `art_skill`
---
-ALTER TABLE `art_skill`
-  ADD CONSTRAINT `FK_ART_SKILL_TO_ART` FOREIGN KEY (`art_id`) REFERENCES `art` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `cities`

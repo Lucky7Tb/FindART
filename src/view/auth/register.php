@@ -84,23 +84,10 @@
 					</div>
 					<div class="col-12 mt-2">
 						<label for="mendaftar">Mendaftar Sebagai</label>
-						<select class="form-select" name="mendaftar" id="mendaftar" onchange="toggleSkill(this)" required>
+						<select class="form-select" name="mendaftar" id="mendaftar" required>
 							<option value="1">ART</option>
 							<option value="0">Pencari ART</option>
 						</select>
-					</div>
-					<div class="col-12 mt-2">
-						<div class="form-group">
-							<div id="art_skill_container">
-								<label for="art_skill">Skill</label>
-								<select class="form-select" name="art_skill" id="art_skill" multiple>
-									<option value="mencuci">Mencuci</option>
-									<option value="memasak">Memasak</option>
-									<option value="bersih-bersih rumah">Bersih-bersih rumah</option>
-									<option value="bahasa inggris">Bahasa inggris</option>
-								</select>
-							</div>
-						</div>
 					</div>
 				</div>
 				<button type="submit" class="btn btn-primary btn-lg mt-2 d-block mx-auto" id="btn-register" name="register">Register</button>

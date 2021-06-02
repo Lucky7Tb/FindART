@@ -82,46 +82,17 @@ function getDetailART(artId) {
 							<div class="col-12 mt-2">
 								Deskripsi: ${art.art_description ? art.art_description : '-'}
 							</div>
-							<div class="col-12 mt-2" id="skill-container">
-							</div>
 						</div>
 					</div>
 				`;
 				artContainer.innerHTML = content;
 
-				getSkillART(artId);
 			} else {
 				throw new Error('Terjadi kesalahan pada server');
 			}
 		})
 		.catch(function (error) {
 			alert(error.message);
-		});
-}
-
-function getSkillART(artId) {
-	fetch(`${baseUrl}/src/api/admin/art/skill-art.php?id=${artId}`, {
-		method: 'GET',
-	})
-		.then(function (response) {
-			return response.json();
-		})
-		.then(function (response) {
-			const skillContainer = document.getElementById('skill-container');
-
-			if (response.data.length === 0) {
-				skillContainer.innerHTML = 'Skill: - ';
-			} else {
-				let content = 'Skill: ';
-				for (let i = 0; i < response.data.length; i++) {
-					if (i == response.data.length - 1) {
-						content += response.data[i].art_skill + '.';
-					} else {
-						content += response.data[i].art_skill + ', ';
-					}
-				}
-				skillContainer.innerHTML = content;
-			}
 		});
 }
 

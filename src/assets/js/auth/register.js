@@ -7,7 +7,6 @@ const kelurahan = document.getElementById('kelurahan');
 const telepon = document.getElementById('telepon');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
-const artSkill = document.getElementById('art_skill');
 const confirmPassword = document.getElementById('con-password');
 const role = document.getElementById('mendaftar');
 const formRegister = document.getElementById('form-register');
@@ -107,11 +106,6 @@ formRegister.addEventListener('submit', function(e) {
 
   const data = new FormData();
 
-	let skill = [...artSkill.options];
-	skill = skill
-	.filter(option => option.selected)
-	.map(option => option.value);
-
   data.append("is_art", role.value);
   data.append("province_id", provinsi.value);
   data.append("city_id", kota.value);
@@ -123,8 +117,7 @@ formRegister.addEventListener('submit', function(e) {
   data.append("contact_number", telepon.value);
   data.append("address", alamat.value);
   data.append("full_name", nama.value);
-  data.append("art_skill", skill);
-
+	
   fetch(`${baseUrl}/src/api/auth/register.php`, {
 		method: 'POST',
 		body: data,
@@ -143,11 +136,3 @@ formRegister.addEventListener('submit', function(e) {
 			alert(error);
 		});
 })
-
-function toggleSkill(form) {
-	if (form.value === "0") {
-		document.getElementById('art_skill_container').style.display = 'none';
-	} else {
-		document.getElementById('art_skill_container').style.display = 'block';
-	}
-}
