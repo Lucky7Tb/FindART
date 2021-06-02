@@ -63,7 +63,7 @@ function getDetailART(artId) {
 								<img src="${art.art_photo}" class="d-block mx-auto" alt="Avatar" width="10%">
 							</div>
 						</div>
-						<div class="row">
+						<div class="row container">
 							<div class="col-12">
 								Provinsi: ${art.province}
 							</div>

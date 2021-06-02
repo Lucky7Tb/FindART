@@ -70,7 +70,7 @@ function getJob() {
 						<div class="card mb-3 h-100">
 							<div class="row g-0">
 								<div class="col-md-4">
-									<img class="img-fluid" src="${data.thumbnail}" alt="thumbnail.jpg">
+									<img class="img-fluid" src="${data.thumbnail}" alt="thumbnail.jpg" width="100%">
 								</div>
 								<div class="col-md-8">
 									<div class="card-body">
@@ -113,7 +113,7 @@ formCari.addEventListener('submit', function (e) {
 							<div class="card mb-3 h-100">
 								<div class="row g-0">
 									<div class="col-md-4">
-										<img class="img-fluid" src="${data.thumbnail}" alt="thumbnail.jpg">
+										<img class="img-fluid" src="${data.thumbnail}" alt="thumbnail.jpg" width="100%">
 									</div>
 									<div class="col-md-8">
 										<div class="card-body">

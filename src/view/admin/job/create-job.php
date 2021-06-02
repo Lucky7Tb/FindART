@@ -30,7 +30,7 @@ require $app['template'] . 'admin/header.php';
 
 				<div id="editor" style="height: 300px;"></div>
 
-				<button type="submit" class="btn btn-primary mt-2 mb-5">Save</button>
+				<button type="submit" class="btn btn-primary btn-lg mt-2 mb-5">Save</button>
 			</form>
 		</div>
 	</div>

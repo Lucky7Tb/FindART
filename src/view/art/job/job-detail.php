@@ -10,7 +10,7 @@ require $app['template'] . 'art/header.php';
 
 	<div id="content"></div>
 	
-	<a class="btn btn-primary btn-lg mb-5 mt-2 d-block mx-auto" href="javascript:void(0)" onclick='applyJob()'>Apply</a>
+	<a class="btn btn-primary btn-lg mb-5 d-block mx-auto" href="javascript:void(0)" onclick='applyJob()'>Apply</a>
 </div>
 <script src="<?= $app['src']['js'] . 'app.js' ?>"></script>
 <script src="<?= $app['src']['js']. 'art/job/job-detail.js' ?>"></script>
@@ -23,8 +23,8 @@ require $app['template'] . 'art/header.php';
 			content += `
 				<div class="card mt-4">
 					<div class="row d-flex flex-row justify-content-evenly">
-						<div class="col-6">
-							<img src="${data.thumbnail}" alt="gambar.png">
+						<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+							<img src="${data.thumbnail}" class="img-fluid" alt="gambar.png">
 							<p style="font-weight: bold; font-size: 20px;">GAJI: Rp. ${data.job_payment}</p>
 							<h4>Rumah ${data.finder}</h4>
 							<div>
@@ -43,14 +43,13 @@ require $app['template'] . 'art/header.php';
 								Alamat lengkap: ${data.address}
 							</p>
 						</div>
-						<div class="col-6 text-center">
+						<div class="col-12 col-sm-12 col-md-6 col-lg-6">
 							<p style="font-weight: 600;">DESKRIPSI</p>
 								<div>
 									${data.job_description}
 								</div>
 						</div>
 					</div>
-					
 				</div>
 			`
 			dataContent.innerHTML = content;

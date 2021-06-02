@@ -145,7 +145,7 @@ function getInterestedART(jobId) {
 							<div class="col">
 								<div class="card h-100">
 									<a href="${baseUrl}/src/view/admin/art/detail-art.php?id=${art.art_id}">
-										<img src="${art.art_photo}" class="img-fluid card-img-top d-block mx-auto" alt="Avatar" width="25%">
+										<img src="${art.art_photo}" class="img-fluid d-block mx-auto" alt="Avatar" width="50%">
 									</a>
 									<div class="card-body">
 										<h4 class="text-center card-title">${art.art_name}</h4>
@@ -161,7 +161,7 @@ function getInterestedART(jobId) {
 							<div class="col">
 								<div class="card h-100">
 									<a href="${baseUrl}/src/view/admin/art/detail-art.php?id=${art.art_id}">
-										<img src="${art.art_photo}" class="img-fluid card-img-top d-block mx-auto" alt="Avatar" width="25%">
+										<img src="${art.art_photo}" class="img-fluid d-block mx-auto" alt="Avatar" width="50%">
 									</a>
 									<div class="card-body">
 										<h4 class="text-center card-title">${art.art_name}</h4>

@@ -31,7 +31,7 @@ checkUser();
 				<p>Tempat Mencari</p>
 				<p style="margin-bottom: 30px;">Asisten Terbaik Untuk Anda</p>
 				<a href="./src/view/auth/register.php" class="btn btn-primary btn-lg mb-3 d-block">Get Started</a>
-				<a href="./src/view/auth/login.php" class="btn btn-outline-primary btn-lg d-block">Login</a>
+				<a href="./src/view/auth/login.php" class="btn btn-outline-primary btn-lg d-block text-white">Login</a>
 	
 			</div>
 			<div class="content-right">
