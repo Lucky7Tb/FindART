@@ -3,8 +3,6 @@
 require __DIR__ . '/../../helpers/helpers.php';
 require __DIR__ . '/../../helpers/query.php';
 
-apiCheckLogin();
-
 $districtId = $_GET['district_id'];
 
 $dataSubDistricts = select("SELECT * FROM `sub_districts` WHERE `district_id` = '$districtId'");
