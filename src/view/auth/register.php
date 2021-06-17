@@ -1,3 +1,9 @@
+<?php
+	require __DIR__.'/../../config/app.php';
+	require __DIR__.'/../../helpers/helpers.php';
+	checkUser();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
