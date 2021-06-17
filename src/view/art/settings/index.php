@@ -18,7 +18,7 @@ require $app['template'] . 'art/header.php';
 					Status: <span style="color: var(--warning-color)">Tidak bekerja :(</span>
 				<?php endif ?>
 			</h3>
-			<form id="form-setting">
+			<form method="post" id="form-setting">
 				<div class="form-group">
 					<label for="profile_photo">Foto profile</label>
 					<input class="form-control" type="file" name="profile_photo" id="profile_photo">

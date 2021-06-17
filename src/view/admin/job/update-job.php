@@ -12,7 +12,7 @@ require $app['template'] . 'admin/header.php';
 
 	<div class="row">
 		<div class="col-12">
-			<form id="form-job">
+			<form method="post" id="form-job">
 				<input type="hidden" id="job_id">
 				<input type="hidden" id="thumbnail_id">
 

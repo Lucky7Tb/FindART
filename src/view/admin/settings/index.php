@@ -13,7 +13,7 @@ require $app['template'] . 'admin/header.php';
 		<div class="col-12">
 			<img src="<?= $_SESSION['user']['photo'] ?>" class="img-fluid d-block mx-auto" alt="Avatar" width="10%">
 
-			<form id="form-setting">
+			<form method="post" id="form-setting">
 				<div class="form-group mt-2">
 					<label for="profile_photo">Foto profile</label>
 					<input type="file" name="profile_photo" class="form-control" id="profile_photo">

@@ -55,8 +55,8 @@ provinsi.addEventListener('change', function () {
 function getJob() {
 	const dataLowongan = document.getElementById('data-lowongan');
 
-	fetch('http://localhost/findart/src/api/art/job/get-list-job.php', {
-		method: 'GET',
+	fetch(`${baseUrl}/src/api/art/job/get-list-job.php`, {
+		method: 'GET'
 	})
 		.then(function (response) {
 			return response.json();

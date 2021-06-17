@@ -24,7 +24,7 @@
 					<img src="../../assets/img/findart_logo_2.png" class="img-responsive d-block mx-auto" alt="logo.png">			
 				</a>
 			</div>
-			<form class="mt-5" id="form-login">
+			<form method="post" class="mt-5" id="form-login">
 				<div class="row">
 					<div class="col-12">
 						<div class="form-group">

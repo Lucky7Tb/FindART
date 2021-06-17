@@ -26,7 +26,7 @@
 					<img src="../../assets/img/findart_logo_2.png" class="img-responsive d-block mx-auto" alt="logo.png">			
 				</a>
 			</div>
-			<form id="form-register">
+			<form method="post" id="form-register">
 				<div class="row">
 					<div class="col-6">
 						<div class="form-grup">
