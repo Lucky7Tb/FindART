@@ -4,6 +4,8 @@ require __DIR__ . '/../../../helpers/helpers.php';
 require __DIR__ . '/../../../helpers/query.php';
 $app = config();
 
+apiCheckLogin();
+
 $userId = $_SESSION['user']['id'];
 $cekJobStatus = select("SELECT id, job_status FROM art WHERE user_id = '$userId'");
 $artId = $cekJobStatus[0]['id'];

@@ -4,6 +4,8 @@ require __DIR__ . '/../../../config/app.php';
 require __DIR__ . '/../../../helpers/helpers.php';
 require __DIR__ . '/../../../helpers/query.php';
 
+apiCheckLogin();
+
 $query = "
 	SELECT `job_vacancy`.`id`, `job_vacancy`.`photo_id`, `job_vacancy`.`job_description`, `job_vacancy`.`job_payment`, `job_vacancy`.`job_due_date`, `job_vacancy`.`updated_at`, `photos`.`photo_url` AS `thumbnail`
 	FROM `job_vacancy`

@@ -1,0 +1,33 @@
+DirectoryIndex index.php
+
+Options -Indexes
+ErrorDocument 402 /home
+ErrorDocument 403 /home
+ErrorDocument 500 /home
+
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW ERRORPAGEID:ynuzuB
+ErrorDocument 400 /400.html
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE ynuzuB:ERRORPAGEID
+
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW ERRORPAGEID:equjeP
+ErrorDocument 404 /404.html
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE equjeP:ERRORPAGEID
+
+
+
+
+
+
+
+
+
+
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:proyek.luckytruedev.com
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} (www\.)?proyek.luckytruedev.com
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:proyek.luckytruedev.com

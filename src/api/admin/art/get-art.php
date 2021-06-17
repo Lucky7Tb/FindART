@@ -4,6 +4,8 @@ require __DIR__ . '/../../../config/app.php';
 require __DIR__ . '/../../../helpers/helpers.php';
 require __DIR__ . '/../../../helpers/query.php';
 
+apiCheckLogin();
+
 $artFinderId = select("
 	SELECT `id` FROM `art_finder` WHERE `user_id` = '" . $_SESSION['user']['id'] . "'
 ");

@@ -5,6 +5,8 @@ require __DIR__ . '/../../../helpers/helpers.php';
 require __DIR__ . '/../../../helpers/query.php';
 require __DIR__ . '/../../../helpers/upload_img.php';
 
+apiCheckLogin();
+
 $app = config();
 
 if ($_FILES['profile_photo']['name'] != '') {

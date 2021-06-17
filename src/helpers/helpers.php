@@ -30,6 +30,13 @@ function checkIsLogin()
 	}
 }
 
+function apiCheckLogin()
+{
+	if (!isset($_SESSION['user'])) {
+		response(403, null, 'Harap login terlebih dahulu', 'Unauthorized');
+	}
+}
+
 function checkUser()
 {
 	if (isset($_SESSION['user'])) {

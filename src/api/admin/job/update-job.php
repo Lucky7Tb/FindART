@@ -6,6 +6,8 @@ require __DIR__ . '/../../../helpers/query.php';
 require __DIR__ . '/../../../helpers/upload_img.php';
 $app = config();
 
+apiCheckLogin();
+
 $jobId = $_POST['id'];
 $photoId = $_POST['photo_id'];
 $jobDescription = $_POST['job_description'];

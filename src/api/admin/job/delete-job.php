@@ -5,6 +5,8 @@ require __DIR__ . '/../../../helpers/helpers.php';
 require __DIR__ . '/../../../helpers/query.php';
 $app = config();
 
+apiCheckLogin();
+
 $jobId = $_POST['id'];
 
 $jobThumbnail = select("

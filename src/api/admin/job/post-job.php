@@ -6,6 +6,8 @@ require __DIR__. '/../../../helpers/query.php';
 require __DIR__. '/../../../helpers/upload_img.php';
 $app = config();
 
+apiCheckLogin();
+
 $userId = $_SESSION['user']['id'];
 $artFinderId = select("SELECT id FROM art_finder WHERE user_id = '$userId'");
 $artFinderId = $artFinderId[0]['id'];

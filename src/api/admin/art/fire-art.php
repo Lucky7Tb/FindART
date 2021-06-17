@@ -4,6 +4,8 @@ require __DIR__ . '/../../../config/app.php';
 require __DIR__ . '/../../../helpers/helpers.php';
 require __DIR__ . '/../../../helpers/query.php';
 
+apiCheckLogin();
+
 $artId = $_POST['art_id'];
 $jobAcceptedId = $_POST['job_accepted_id'];
 $rating = $_POST['rating'];
