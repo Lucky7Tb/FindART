@@ -13,7 +13,6 @@ $confirmPassword = xssFilter($_POST['confirm_password']);
 $contactNumber = xssFilter($_POST['contact_number']);
 $address = xssFilter($_POST['address']);
 $fullName = xssFilter($_POST['full_name']);
-$artSkill = explode(',', $_POST["art_skill"]);
 $createdAt = getTodayDate();
 $updatedAt = getTodayDate();
 
