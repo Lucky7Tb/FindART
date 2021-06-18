@@ -7,7 +7,7 @@ $app = config();
 apiCheckLogin();
 
 $userId = $_SESSION['user']['id'];
-$cekJobStatus = select("SELECT id, job_status FROM art WHERE user_id = '$userId'");
+$cekJobStatus = select("SELECT `id`, `job_status` FROM `art` WHERE `user_id` = '$userId'");
 $artId = $cekJobStatus[0]['id'];
 $jobStatusArt = $cekJobStatus[0]["job_status"];
 $jobVacancyId = $_POST['job_vacancy_id'];

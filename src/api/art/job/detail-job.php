@@ -26,4 +26,5 @@ $data = select($query);
 if (empty($data)) {
     response(404, null, "Data tidak ditemukan");
 }
+
 response(200, $data[0], 'Berhasil memuat detail lowongan');

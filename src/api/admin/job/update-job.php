@@ -16,7 +16,7 @@ $jobDueDate = $_POST['job_due_date'];
 $updatedAt = getTodayDate();
 
 $isUpdated = save("
-	UPDATE `job_vacancy` SET `job_description` = '$jobDescription', `job_payment` = '$jobPayment', `job_due_date` = '$jobDueDate', `updated_at` = '$updatedAt' WHERE job_vacancy.id = '$jobId'
+	UPDATE `job_vacancy` SET `job_description` = '$jobDescription', `job_payment` = '$jobPayment', `job_due_date` = '$jobDueDate', `updated_at` = '$updatedAt' WHERE `job_vacancy`.`id` = '$jobId'
 ");
 
 if ($isUpdated != -1) {

@@ -20,8 +20,8 @@ if (isset($_GET['id']) && $_GET['id'] !== "") {
 		`job_vacancy`.`is_visible` = '1'
 		ORDER BY `job_vacancy`.`created_at` DESC
 	";
-	$jobData = select($query);
 
+	$jobData = select($query);
 	response(200, $jobData[0], 'Berhasil memuat data lowongan');
 } else {
 	$query .= "
@@ -29,6 +29,7 @@ if (isset($_GET['id']) && $_GET['id'] !== "") {
 		`job_vacancy`.`is_visible` = '1'
 		ORDER BY `job_vacancy`.`created_at` DESC
 	";
+
 	$jobData = select($query);
 	response(200, $jobData, 'Berhasil memuat data lowongan');
 }
